@@ -4,42 +4,91 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/verylightblue"
+    android:background="#F8F8F8"
     tools:context=".LoginActivity">
 
-    <ImageView
-        android:id="@+id/logo"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="128dp"
-        android:src="@android:drawable/btn_star"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+    <TextView
+        android:id="@+id/textWelcomeBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="¡Bienvenida/o de vuelta!"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        android:textSize="26sp"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textGladToSeeYou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nos alegramos de verte :)"
+        app:layout_constraintEnd_toEndOf="@id/guideline2"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/textWelcomeBack"
+        app:layout_constraintStart_toStartOf="@id/guideline1"
+        android:layout_marginTop="8dp"
+        />
+
+
+
+    <!--    <ImageView-->
+    <!--        android:id="@+id/logo"-->
+    <!--        android:layout_width="100dp"-->
+    <!--        android:layout_height="100dp"-->
+    <!--        android:layout_marginTop="128dp"-->
+    <!--        android:src="@android:drawable/btn_star"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilUsername"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
         android:layout_marginTop="32dp"
+        android:textColorHint="@color/blue"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@id/logo"
+        app:layout_constraintTop_toBottomOf="@id/textGladToSeeYou"
         app:startIconDrawable="@android:drawable/presence_online">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editLogin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:hint="Usuario"
-            android:imeOptions="actionDone" />
+            android:backgroundTint="@color/white"
+            android:gravity="start"
+            android:hint="Nombre de usuario"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+
+            android:textColorLink="@color/black" />
+
+        <!--        <EditText-->
+        <!--            android:layout_width="match_parent"-->
+        <!--            android:layout_height="wrap_content"-->
+        <!--            android:background="@color/white"-->
+        <!--            android:hint="Usuario"-->
+        <!--            android:imeOptions="actionDone" />-->
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/tilPassword"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:textColorHint="@color/blue"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@id/tilUsername"
@@ -49,9 +98,14 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:backgroundTint="@color/white"
+            android:gravity="start"
             android:hint="Contraseña"
-            android:inputType="textPassword">
+            android:inputType="text"
+            android:maxLines="1"
+            android:textAlignment="textStart"
+            android:textColor="@color/black"
+            android:textColorLink="@color/black">
 
         </EditText>
 
@@ -60,25 +114,26 @@
     <Button
         android:id="@+id/buttonLogin"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/blue"
+        android:layout_height="56dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="@color/darkblue"
         android:text="INICIAR SESIÓN"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@id/tilPassword" />
+        app:layout_constraintTop_toBottomOf="@id/textForgotPassword" />
 
 
     <TextView
-        android:id="@+id/textSignup"
+        android:id="@+id/textForgotPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
         android:gravity="center"
-        android:text="¿Eres nuevo? Crear cuenta"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toStartOf="@id/guideline2"
+        android:text="@string/forgot_password"
+        android:textColor="#333333"
         app:layout_constraintStart_toStartOf="@id/guideline1"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin" />
+        app:layout_constraintTop_toBottomOf="@+id/tilPassword" />
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -86,13 +141,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.15" />
+        app:layout_constraintGuide_percent="0.1" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.85" />
+        app:layout_constraintGuide_percent="0.9" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
