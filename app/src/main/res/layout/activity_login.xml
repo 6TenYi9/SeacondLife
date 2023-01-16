@@ -59,7 +59,7 @@
         app:startIconDrawable="@android:drawable/presence_online">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/editLogin"
+            android:id="@+id/editUsername"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"

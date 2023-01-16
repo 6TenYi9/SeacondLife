@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">SeacondLife</string>
     <string name="forgot_password"><u>¿Has olvidado tu contraseña?</u></string>
+    <string name="sign_up"><u>Crear cuenta</u></string>
 </resources>
