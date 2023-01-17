@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/menu"
+        android:icon="@drawable/appmenu"
+        android:title="menu"
+        app:showAsAction="ifRoom" >
+        <menu xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="#0077B6B2">
+            <item android:id="@+id/about"
+                android:title="about"
+                app:showAsAction="ifRoom"/>
+            <item android:id="@+id/Settings"
+                android:title="Settings"
+                app:showAsAction="ifRoom"/>
+            <item android:id="@+id/LogOut"
+                android:title="LogOut"
+                app:showAsAction="ifRoom"/>
+
+        </menu>
+    </item>
+</menu>
