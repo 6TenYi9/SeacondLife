@@ -52,6 +52,7 @@
         android:id="@+id/tilEmail"
         android:layout_width="0dp"
         android:layout_height="56dp"
+        android:layout_marginTop="8dp"
         android:textColorHint="@color/blue"
         app:boxStrokeWidth="0dp"
         app:boxStrokeWidthFocused="0dp"
