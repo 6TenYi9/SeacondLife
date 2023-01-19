@@ -2,13 +2,16 @@ package com.team.seacondlife
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
+import android.view.MenuItem
 import android.view.View
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.jawnnypoo.physicslayout.Physics
 import com.team.seacondlife.databinding.ActivityMainBinding
@@ -24,6 +27,16 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        //menu options
+
+
+
+
+
+
+
+
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
@@ -114,5 +127,28 @@ class MainActivity : AppCompatActivity() {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.appbar, menu)
         return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        val id = item.itemId
+        if (id == R.id.LogOut) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            val toast = Toast.makeText(this, "Cerrando sesion...", Toast.LENGTH_LONG)
+            toast.show()
+        }
+        if (id == R.id.about) {
+            val intent = Intent(this, AboutActivity::class.java)
+            startActivity(intent)
+        }
+        if (id == R.id.Settings) {
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
+        }
+
+        return super.onOptionsItemSelected(item)
     }
 }
