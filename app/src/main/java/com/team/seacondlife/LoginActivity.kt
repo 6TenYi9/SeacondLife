@@ -1,5 +1,6 @@
 package com.team.seacondlife
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
@@ -16,6 +17,10 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
         var contra = findViewById<TextView>(R.id.textForgotPassword)
 
+        //login to access to Main without DB
+        var LoginButton=findViewById<Button>(R.id.buttonLogin)
+        LoginButton.setOnClickListener(View.OnClickListener { ToMain() })
+
         contra.setOnClickListener(View.OnClickListener { contraToast() })
     }
 
@@ -24,4 +29,8 @@ class LoginActivity : AppCompatActivity() {
         toast.show()
     }
 
+    fun ToMain(){
+        val intent=Intent (this, MainActivity::class.java)
+        startActivity(intent)
+    }
 }
