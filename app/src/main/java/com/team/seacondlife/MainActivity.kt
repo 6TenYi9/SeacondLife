@@ -28,14 +28,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        //menu options
-
-
-
-
-
-
-
 
         binding= ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -123,6 +115,9 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 
+
+
+    //Menu de arriba
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
         inflater.inflate(R.menu.appbar, menu)
