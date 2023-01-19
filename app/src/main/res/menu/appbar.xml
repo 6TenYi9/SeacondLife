@@ -10,13 +10,16 @@
             android:background="#0077B6B2">
             <item android:id="@+id/about"
                 android:title="about"
-                app:showAsAction="ifRoom"/>
+                android:icon="@drawable/information"
+                app:showAsAction="withText|ifRoom"/>
             <item android:id="@+id/Settings"
                 android:title="Settings"
-                app:showAsAction="ifRoom"/>
+                android:icon="@drawable/settings"
+                app:showAsAction="withText|ifRoom"/>
             <item android:id="@+id/LogOut"
                 android:title="LogOut"
-                app:showAsAction="ifRoom"/>
+                android:icon="@drawable/logout"
+                app:showAsAction="withText|ifRoom"/>
 
         </menu>
     </item>
