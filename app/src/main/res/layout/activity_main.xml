@@ -7,36 +7,39 @@
     android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
+
     <com.jawnnypoo.physicslayout.PhysicsFrameLayout
         android:id="@+id/sea"
         android:layout_width="match_parent"
         android:layout_height="750dp"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:gravityX="0.1"
         app:gravityY="0.1"
-        tools:ignore="MissingConstraints">
-        <ImageView
-            android:layout_width="@dimen/square_size2"
-            android:layout_height="@dimen/square_size2"
-            android:id="@+id/animal"
-            android:layout_gravity="center"
-            android:src="@drawable/pezpayaso"
-            app:layout_shape="circle"/>
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.406"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="0dp">
 
         <ImageView
+            android:id="@+id/animal"
+            android:layout_width="@dimen/square_size2"
+            android:layout_height="@dimen/square_size2"
+            android:layout_gravity="center"
+            android:src="@drawable/pezpayaso"
+            app:layout_shape="circle" />
+
+        <ImageView
+            android:id="@+id/animal2"
             android:layout_width="@dimen/square_size"
             android:layout_height="@dimen/square_size"
-            android:id="@+id/animal2"
             android:layout_gravity="center_vertical"
             android:src="@drawable/pez"
-            app:layout_shape="circle"/>
+            app:layout_shape="circle" />
 
 
     </com.jawnnypoo.physicslayout.PhysicsFrameLayout>
-
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/CameraButton"
@@ -51,5 +54,6 @@
         tools:ignore="MissingConstraints">
 
     </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
