@@ -9,12 +9,21 @@
             <item android:id="@+id/about"
                 android:title="@string/acerca_de"
                 app:showAsAction="ifRoom"/>
+                android:title="about"
+                android:icon="@drawable/information"
+                app:showAsAction="withText|ifRoom"/>
             <item android:id="@+id/Settings"
                 android:title="@string/ajustes"
                 app:showAsAction="ifRoom"/>
+                android:title="Settings"
+                android:icon="@drawable/settings"
+                app:showAsAction="withText|ifRoom"/>
             <item android:id="@+id/LogOut"
                 android:title="@string/cerrar_sesion"
                 app:showAsAction="ifRoom"/>
+                android:title="LogOut"
+                android:icon="@drawable/logout"
+                app:showAsAction="withText|ifRoom"/>
 
         </menu>
     </item>
