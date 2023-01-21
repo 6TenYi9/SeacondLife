@@ -5,4 +5,11 @@
     <string name="acerca_de">Acerca de</string>
     <string name="ajustes">Ajustes</string>
     <string name="cerrar_sesion">Cerrar sesion</string>
+    <string name="app_by">APP BY:</string>
+    <string name="names">Alexia Molina \nDaniel Mora \nWei Shan</string>
+    <string name="icons_by">ICONS BY</string>
+    <string name="cp">Freepick (Flaticon)</string>
+    <string name="backgrounds_by">BACKGROUNDS BY</string>
+    <string name="designer">Alexia Molina</string>
+    <string name="app_version">App version: 1.0.0 \n All rights reserved</string>
 </resources>

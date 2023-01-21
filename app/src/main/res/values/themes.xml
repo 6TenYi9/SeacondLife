@@ -26,6 +26,7 @@
         <item name="colorPrimary">@color/darkblue</item>
         <item name="colorOnPrimary">@color/darkblue</item>
         <item name="windowActionBarOverlay">true</item>
+        <item name="android:statusBarColor">@color/darkblue</item>
         <item name="popupMenuBackground">@color/darkblue</item>
         <item name="android:textColor">@color/white</item>
 
