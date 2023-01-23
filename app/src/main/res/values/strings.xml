@@ -12,4 +12,8 @@
     <string name="backgrounds_by">BACKGROUNDS BY</string>
     <string name="designer">Alexia Molina</string>
     <string name="app_version">App version: 1.0.0 \n All rights reserved</string>
+    <string name="interface_settings">Ajustes de Interfaz</string>
+    <string name="idioma">Idioma:</string>
+    <string name="app_settings">Ajustes de la aplicación</string>
+    <string name="dark_mode">Modo noche:</string>
 </resources>
