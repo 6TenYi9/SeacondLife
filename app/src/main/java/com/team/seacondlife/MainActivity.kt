@@ -1,5 +1,6 @@
 package com.team.seacondlife
 
+
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
