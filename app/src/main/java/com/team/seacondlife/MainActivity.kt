@@ -89,21 +89,21 @@ class MainActivity : AppCompatActivity() {
         Timer().scheduleAtFixedRate(object:TimerTask(){
             override fun run(){
                 var conf:Boolean=true;
-
-                if(!conf) {
-                    binding.sea.physics.setGravity(
-                        ((Math.random() * 9) * (0.1)).toFloat(),
-                        ((Math.random() * 9) * (0.1)).toFloat()
-                    )
-                    conf=true
-                }else{
-                    binding.sea.physics.setGravity(
-                        ((Math.random() * 9) * (-0.1)).toFloat(),
-                        ((Math.random() * 9) * (-0.1)).toFloat()
-                    )
-                    conf=false
+                while(true) {
+                    if (!conf) {
+                        binding.sea.physics.setGravity(
+                            ((Math.random() * 9) * (0.1)).toFloat(),
+                            ((Math.random() * 9) * (0.1)).toFloat()
+                        )
+                        conf = true
+                    } else {
+                        binding.sea.physics.setGravity(
+                            ((Math.random() * 9) * (-0.1)).toFloat(),
+                            ((Math.random() * 9) * (-0.1)).toFloat()
+                        )
+                        conf = false
+                    }
                 }
-
             }
         },0,10000)
     }
