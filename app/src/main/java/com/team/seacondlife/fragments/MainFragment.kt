@@ -143,16 +143,10 @@ class MainFragment : Fragment() {
         return false
     }
 
-    /* mal
-        override fun onCreateOptionsMenu(menu: Menu): Boolean {
-            val inflater: MenuInflater = menuInflater
-            inflater.inflate(R.menu.appbar, menu)
-            return true
-        }
-    */
+    /*
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
     }
-
+*/
 
 }

@@ -37,19 +37,4 @@
 
     </com.jawnnypoo.physicslayout.PhysicsFrameLayout>
 
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/CameraButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:elevation="18dp"
-        android:layout_margin="16dp"
-        android:backgroundTint="#90E0EF"
-        android:src="@drawable/camera"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        tools:ignore="MissingConstraints">
-
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
