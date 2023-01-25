@@ -1,6 +1,21 @@
 package com.team.seacondlife
 
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.MenuItem
+import android.widget.Toast
+import androidx.annotation.IdRes
+import androidx.appcompat.app.AppCompatActivity
+import androidx.viewpager.widget.ViewPager
+import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import com.team.seacondlife.databinding.ActivityMainBinding
+import com.team.seacondlife.ui.main.SectionsPagerAdapter
 
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
+/*
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import androidx.appcompat.app.AppCompatActivity
@@ -120,3 +135,104 @@ class MainActivity : AppCompatActivity() {
     }
 }
 
+*/
+
+class MainActivity : AppCompatActivity() {
+    private var binding: ActivityMainBinding? = null
+    private var prevMenuItem: MenuItem? = null
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        //binding = ActivityMainBnBinding.inflate(layoutInflater)
+        setContentView(binding?.root)
+
+        //el adaptador coloca las Pages -los fragmentos con las diferentes vistas- dentro de la vista padre Viewpager del xml
+        val sectionsPagerAdapter = SectionsPagerAdapter(
+            this,
+            supportFragmentManager
+        )
+        val viewPager: ViewPager = binding?.viewPager!!
+        viewPager.adapter = sectionsPagerAdapter
+        //        TabLayout tabs = binding.tabs;
+//        tabs.setupWithViewPager(viewPager);
+//        FloatingActionButton fab = binding.fab;
+//
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
+
+
+// cast al xml
+        val mybottomNavView = findViewById<BottomNavigationView>(R.id.bottom_navigation)
+
+        // crear badges
+        val bottomNavigationMenuView = mybottomNavView.getChildAt(0) as BottomNavigationMenuView
+        val v = bottomNavigationMenuView.getChildAt(2)
+        val itemView = v as BottomNavigationItemView
+        //LayoutInflater.from(this).inflate(R.layout.layout_badge, itemView, true)
+        mybottomNavView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.likes -> {
+                    item.isChecked = true
+                    //Toast.makeText(this@MainActivity, "Likes clicked.", Toast.LENGTH_SHORT).show()
+                    //removeBadge(mybottomNavView, item.itemId)
+                    viewPager.currentItem = 0
+                }
+                R.id.add -> {
+                    item.isChecked = true
+                    //Toast.makeText(this@MainActivity, "Add clicked.", Toast.LENGTH_SHORT).show()
+                    //removeBadge(mybottomNavView, item.itemId)
+                    viewPager.currentItem = 1
+                }
+                R.id.browse -> {
+                    item.isChecked = true
+                    //Toast.makeText(this@MainActivity, "Add clicked.", Toast.LENGTH_SHORT).show()
+                    //removeBadge(mybottomNavView, item.itemId)
+                    viewPager.currentItem = 2
+                }
+                R.id.personal -> {
+                    item.isChecked = true
+                    //Toast.makeText(this@MainActivity, "Add clicked.", Toast.LENGTH_SHORT).show()
+                    //removeBadge(mybottomNavView, item.itemId)
+                    viewPager.currentItem = 3
+                }
+            }
+            false
+        }
+
+
+//        here we listen to viewpager moves and set navigations items checked or not
+        viewPager.addOnPageChangeListener(object : OnPageChangeListener {
+            override fun onPageScrolled(
+                position: Int,
+                positionOffset: Float,
+                positionOffsetPixels: Int
+            ) {
+            }
+
+            override fun onPageSelected(position: Int) {
+                if (prevMenuItem != null) prevMenuItem!!.isChecked =
+                    false else mybottomNavView.menu.getItem(0).isChecked =
+                    false
+                mybottomNavView.menu.getItem(position).isChecked = true
+                removeBadge(mybottomNavView, mybottomNavView.menu.getItem(position).itemId)
+                prevMenuItem = mybottomNavView.menu.getItem(position)
+            }
+
+            override fun onPageScrollStateChanged(state: Int) {}
+        })
+    }
+
+    companion object {
+        //removing badges
+        fun removeBadge(bottomNavigationView: BottomNavigationView, @IdRes itemId: Int) {
+            val itemView = bottomNavigationView.findViewById<BottomNavigationItemView>(itemId)
+            if (itemView.childCount == 3) {
+                itemView.removeViewAt(2)
+            }
+        }
+    }
+}

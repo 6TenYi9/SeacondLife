@@ -10,7 +10,7 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.jawnnypoo.physicslayout.Physics
 import com.team.seacondlife.R
-import com.team.seacondlife.databinding.ActivityMainBinding
+import com.team.seacondlife.databinding.FragmentMainBinding
 import org.jbox2d.dynamics.Body
 import org.jbox2d.dynamics.World
 import java.util.*
@@ -34,7 +34,7 @@ class MainFragment : Fragment() {
     }
 */
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: FragmentMainBinding
     private var index: Int = 0
     private var cont: Int = 0
 
@@ -46,7 +46,7 @@ class MainFragment : Fragment() {
 
 
         super.onCreate(savedInstanceState)
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        val binding = FragmentMainBinding.inflate(layoutInflater)
 
         val view: View = binding.getRoot()
 
@@ -116,18 +116,20 @@ class MainFragment : Fragment() {
             override fun run() {
                 var conf: Boolean = true;
 
-                if (!conf) {
-                    binding.sea.physics.setGravity(
-                        ((Math.random() * 9) * (0.1)).toFloat(),
-                        ((Math.random() * 9) * (0.1)).toFloat()
-                    )
-                    conf = true
-                } else {
-                    binding.sea.physics.setGravity(
-                        ((Math.random() * 9) * (-0.1)).toFloat(),
-                        ((Math.random() * 9) * (-0.1)).toFloat()
-                    )
-                    conf = false
+                while (true) {
+                    if (!conf) {
+                        binding.sea.physics.setGravity(
+                            ((Math.random() * 9) * (0.1)).toFloat(),
+                            ((Math.random() * 9) * (0.1)).toFloat()
+                        )
+                        conf = true
+                    } else {
+                        binding.sea.physics.setGravity(
+                            ((Math.random() * 9) * (-0.1)).toFloat(),
+                            ((Math.random() * 9) * (-0.1)).toFloat()
+                        )
+                        conf = false
+                    }
                 }
 
             }
@@ -140,13 +142,14 @@ class MainFragment : Fragment() {
     fun UpdateInDB(): Boolean {
         return false
     }
-/* mal
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.appbar, menu)
-        return true
-    }
-*/
+
+    /* mal
+        override fun onCreateOptionsMenu(menu: Menu): Boolean {
+            val inflater: MenuInflater = menuInflater
+            inflater.inflate(R.menu.appbar, menu)
+            return true
+        }
+    */
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
     }
