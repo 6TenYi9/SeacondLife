@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
+
 }
 
 android {
@@ -31,6 +32,7 @@ android {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
     kotlinOptions {
         jvmTarget = '1.8'
     }
@@ -44,6 +46,9 @@ dependencies {
     implementation 'androidx.constraintlayout:constraintlayout:2.1.4'
     //physic layout implementation:
     implementation 'com.jawnnypoo:physicslayout:3.0.1'
+
+    //DataBase (firebase) implementation:
+    implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
