@@ -1,79 +1,108 @@
-package com.team.seacondlife
+package com.team.seacondlife.fragments
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.view.Menu
-import android.view.MenuInflater
-import android.view.View
+import android.view.*
 import android.widget.ImageView
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.fragment.app.Fragment
 import com.jawnnypoo.physicslayout.Physics
-import com.team.seacondlife.databinding.ActivityMainBinding
+import com.team.seacondlife.R
+import com.team.seacondlife.databinding.FragmentMainBinding
 import org.jbox2d.dynamics.Body
 import org.jbox2d.dynamics.World
 import java.util.*
 
-class MainActivity : AppCompatActivity() {
 
-    private lateinit var binding:ActivityMainBinding
-    private var index: Int=0
-    private var cont: Int=0
+class MainFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
+/*
+    fun onCreateView(
+        inflater: LayoutInflater?,
+        @Nullable container: ViewGroup?,
+        @Nullable savedInstanceState: Bundle?
+    ): View? {
+        val binding: MartianDataBinding = DataBindingUtil.inflate(
+            inflater, R.layout.martian_data, container, false
+        )
+        val view: View = binding.getRoot()
+        //here data must be an instance of the class MarsDataProvider
+        binding.setMarsdata(data)
+        return view
+    }
+*/
+
+    private lateinit var binding: FragmentMainBinding
+    private var index: Int = 0
+    private var cont: Int = 0
+
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+
+
         super.onCreate(savedInstanceState)
-        binding= ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        val binding = FragmentMainBinding.inflate(layoutInflater)
 
-        this.setTitle(null)
+        val view: View = binding.getRoot()
+
+        setHasOptionsMenu(true);
+
+        //this.title = null
 
         binding.sea.physics.isFlingEnabled = true
         binding.sea.physics.isPhysicsEnabled
         binding.sea.physics.isFlingEnabled
 
-        for(i in 0 until binding.sea.childCount){
-            val imageView=binding.sea.getChildAt(i) as ImageView
-            imageView.id=i
+        for (i in 0 until binding.sea.childCount) {
+            val imageView = binding.sea.getChildAt(i) as ImageView
+            imageView.id = i
             imageView.setImageResource(R.drawable.pez)
         }
-        index=binding.sea.childCount+1;
+        index = binding.sea.childCount + 1;
 
         binding.sea.setOnLongClickListener {
             binding.sea.physics.giveRandomImpulse()
             return@setOnLongClickListener true
         }
 
-        binding.sea.physics.setOnCollisionListener(object: Physics.OnCollisionListener{
+        binding.sea.physics.setOnCollisionListener(object : Physics.OnCollisionListener {
             @SuppressLint("SetTextIl8n")
-            override fun onCollisionEntered(viewIdA:Int,viewIdB: Int){
-                Log.d(ContentValues.TAG,"$viewIdB")
-                if(viewIdB!=0) {
+            override fun onCollisionEntered(viewIdA: Int, viewIdB: Int) {
+                Log.d(ContentValues.TAG, "$viewIdB")
+                if (viewIdB != 0) {
                     binding.animal.setImageResource(R.drawable.mantarraya)
-                }else{
+                } else {
                     binding.animal.setImageResource(R.drawable.pezpayaso)
                 }
             }
-            override fun onCollisionExited(viewIdA: Int, viewIdB: Int){}
+
+            override fun onCollisionExited(viewIdA: Int, viewIdB: Int) {}
         })
 
-        if(UpdateInDB()) {
-            val pez=ImageView(this)
+        /*
+        if (UpdateInDB()) {
+            val pez = ImageView(this)
             pez.setImageResource(R.drawable.pulpo)
             val layoutParams = ConstraintLayout.LayoutParams(
                 resources.getDimensionPixelSize(R.dimen.square_size),
                 resources.getDimensionPixelSize(R.dimen.square_size)
             )
-            pez.layoutParams=layoutParams
-            pez.id=index
+            pez.layoutParams = layoutParams
+            pez.id = index
             binding.sea.addView(pez)
             index++
         }
+        */
 
-        binding.sea.physics.addOnPhysicsProcessedListener(object :Physics.OnPhysicsProcessedListener{
+        binding.sea.physics.addOnPhysicsProcessedListener(object :
+            Physics.OnPhysicsProcessedListener {
             override fun onPhysicsProcessed(physics: Physics, world: World) {
-                Log.d(ContentValues.TAG,"onPhysicsProcessed")
+                Log.d(ContentValues.TAG, "onPhysicsProcessed")
             }
         })
 
@@ -83,10 +112,11 @@ class MainActivity : AppCompatActivity() {
             }
         })
 
-        Timer().scheduleAtFixedRate(object:TimerTask(){
-            override fun run(){
-                var conf:Boolean=true;
-                while(true) {
+        Timer().scheduleAtFixedRate(object : TimerTask() {
+            override fun run() {
+                var conf: Boolean = true;
+
+                while (true) {
                     if (!conf) {
                         binding.sea.physics.setGravity(
                             ((Math.random() * 9) * (0.1)).toFloat(),
@@ -101,8 +131,11 @@ class MainActivity : AppCompatActivity() {
                         conf = false
                     }
                 }
+
             }
-        },0,10000)
+        }, 0, 10000)
+
+        return view
     }
 
 
@@ -110,9 +143,10 @@ class MainActivity : AppCompatActivity() {
         return false
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        val inflater: MenuInflater = menuInflater
-        inflater.inflate(R.menu.appbar, menu)
-        return true
+    /*
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        super.onCreateOptionsMenu(menu, inflater)
     }
+*/
+
 }
