@@ -146,7 +146,7 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:src="@drawable/estrella"
-        android:layout_marginLeft="-19dp"
+        android:layout_marginLeft="-13dp"
         app:layout_constraintStart_toStartOf="@id/guideLeft"
         app:layout_constraintTop_toTopOf="@id/guideBotIMG">
 

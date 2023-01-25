@@ -130,7 +130,7 @@ class MainActivity : AppCompatActivity() {
         // as you specify a parent activity in AndroidManifest.xml.
         val id = item.itemId
         if (id == R.id.LogOut) {
-            val intent = Intent(this, LoginActivity::class.java)
+            val intent = Intent(this, act_tips::class.java)
             startActivity(intent)
             val toast = Toast.makeText(this, "Cerrando sesion...", Toast.LENGTH_LONG)
             toast.show()
