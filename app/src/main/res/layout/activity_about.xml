@@ -42,11 +42,10 @@
     <LinearLayout
         android:layout_width="0px"
         android:layout_height="0px"
-
+        android:background="@drawable/semi_transparent_background"
         app:layout_constraintCircleRadius="200dp"
         app:layout_constraintEnd_toEndOf="@id/guideRight"
         app:layout_constraintStart_toStartOf="@id/guideLeft"
-        android:background="@drawable/round_shape"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="@id/guideTop"
         app:layout_constraintBottom_toTopOf="@id/guideBot">

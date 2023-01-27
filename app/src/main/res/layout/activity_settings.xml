@@ -50,9 +50,9 @@
         app:layout_constraintGuide_percent="0.90" />
 
     <LinearLayout
+        android:background="@drawable/semi_transparent_background"
         android:layout_width="0px"
         android:layout_height="0px"
-        android:background="@drawable/round_shape"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@id/guideBot"
         app:layout_constraintCircleRadius="200dp"
@@ -137,16 +137,17 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:src="@drawable/tiburon"
+        android:layout_marginTop="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/guideTopIMG">
 
     </ImageView>
 
     <ImageView
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/estrella"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_marginLeft="-13dp"
+        android:src="@drawable/alga"
         app:layout_constraintStart_toStartOf="@id/guideLeft"
         app:layout_constraintTop_toTopOf="@id/guideBotIMG">
 

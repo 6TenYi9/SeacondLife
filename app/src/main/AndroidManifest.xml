@@ -13,15 +13,6 @@
         android:theme="@style/Theme.SeacondLife"
         tools:targetApi="31">
         <activity
-            android:name=".act_tips"
-            android:exported="false"
-            android:label="@string/title_activity_act_tips"
-            android:theme="@style/Theme.SeacondLife.NoActionBar">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".TipsActivity"
             android:exported="false"
             android:parentActivityName=".MainActivity">
