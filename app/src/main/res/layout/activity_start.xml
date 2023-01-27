@@ -23,7 +23,7 @@
         android:layout_height="56dp"
         android:layout_marginTop="40dp"
         android:backgroundTint="@color/darkblue"
-        android:text="Iniciar sesión"
+        android:text="@string/log_in"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

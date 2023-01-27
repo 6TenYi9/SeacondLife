@@ -1,7 +1,36 @@
 <resources>
-    <string name="app_name">SeacondLife</string>
+    <string name="app_name" translatable="false">SeacondLife</string>
     <string name="forgot_password"><u>¿Has olvidado tu contraseña?</u></string>
     <string name="sign_up"><u>Crear cuenta</u></string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="log_out">Cerrar sesion</string>
+    <string name="app_by">APP BY:</string>
+    <string name="names" translatable="false">Alexia Molina \nDaniel Mora \nWei Shan</string>
+    <string name="icons_by">ICONS BY</string>
+    <string name="cp" translatable="false">Freepick (Flaticon)</string>
+    <string name="backgrounds_by">BACKGROUNDS BY</string>
+    <string name="designer" translatable="false">Alexia Molina</string>
+    <string name="app_version" translatable="false">App version: 1.0.0 \n All rights reserved</string>
+    <string name="interface_settings">Ajustes de Interfaz</string>
+    <string name="idioma">Idioma:</string>
+    <string name="app_settings">Ajustes de la aplicación</string>
+    <string name="dark_mode">Modo noche:</string>
+    <string name="log_in">Iniciar sesión</string>
+    <string name="welcome">¡Bienvenida/o de vuelta!</string>
+    <string name="glad_to_see_ya">Nos alegramos de verte :)</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Correo electrónico</string>
+    <string name="repeat_pass">Repite contraseña</string>
+    <string name="crear_cuenta2">CREAR CUENTA</string>
+    <string name="bienvenido">Bienvenido</string>
+    <string name="cerrar_sesion">log out</string>
+
+    <!--oops-->
+    <string name="title_activity_act_tips">act_tips</string>
+    <string name="large_text">"large text"</string>
+    <string name="action_settings">Settings</string>
 </resources>
