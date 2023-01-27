@@ -22,4 +22,5 @@
     <string name="repeat_pass">Repite la contraseña</string>
     <string name="crear_cuenta2">CREAR CUENTA</string>
     <string name="bienvenido">¡BIENVENIDO! :)</string>
+    <string name="hello_blank_fragment">blank</string>
 </resources>
