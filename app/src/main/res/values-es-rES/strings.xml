@@ -23,4 +23,10 @@
     <string name="crear_cuenta2">CREAR CUENTA</string>
     <string name="bienvenido">¡BIENVENIDO! :)</string>
     <string name="hello_blank_fragment">blank</string>
+    <string name="AlertDg_common_title">Mensaje</string>
+    <string name="AlertDg_possbtn_text">Entendido</string>
+    <string name="AlertDg_message_ErrLogin">\\nUps, el usuario o contraseña introducido es incorrecto!!</string>
+    <string name="AlertDg_message_ErrSignUp">\\nLas contraseñas no coinciden o el usuario ya existe :(</string>
+    <string name="AlertDg_message_SuccSignUp">\\nCuenta registrada con éxito!!</string>
+    <string name="AlertDg_message_EmptySignUp">\\nHay campos vacios</string>
 </resources>

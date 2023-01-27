@@ -35,9 +35,9 @@ class LoginActivity : AppCompatActivity() {
                 ToMain()
             }else{
                 var ad = AlertDialog.Builder(this)
-                ad.setTitle("Message")
-                ad.setMessage("\nUps, Username or password is incorrect!!")
-                ad.setPositiveButton("Ok", null)
+                ad.setTitle(R.string.AlertDg_common_title)
+                ad.setMessage(R.string.AlertDg_message_ErrLogin)
+                ad.setPositiveButton(R.string.AlertDg_possbtn_text, null)
                 ad.show()
             }
         }

@@ -2,7 +2,6 @@
     <string name="app_name" translatable="false">SeacondLife</string>
     <string name="forgot_password"><u>¿Has olvidado tu contraseña?</u></string>
     <string name="sign_up"><u>Crear cuenta</u></string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="acerca_de">Acerca de</string>
     <string name="ajustes">Ajustes</string>
@@ -28,9 +27,12 @@
     <string name="crear_cuenta2">CREAR CUENTA</string>
     <string name="bienvenido">Bienvenido</string>
     <string name="cerrar_sesion">log out</string>
-
+    <string name="AlertDg_common_title">Mensaje</string>
+    <string name="AlertDg_possbtn_text">Ok</string>
+    <string name="AlertDg_message_ErrLogin">\nUps, el usuario o contraseña introducido es incorrecto!!</string>
+    <string name="AlertDg_message_ErrSignUp">\nLas contraseñas no coinciden o el usuario ya existe :(</string>
+    <string name="AlertDg_message_SuccSignUp">\nCuenta registrada con éxito!!</string>
+    <string name="AlertDg_message_EmptySignUp">\nHay campos vacios</string>
     <!--oops-->
-    <string name="title_activity_act_tips">act_tips</string>
-    <string name="large_text">"large text"</string>
-    <string name="action_settings">Settings</string>
+
 </resources>

@@ -30,9 +30,9 @@ class SignUpActivity : AppCompatActivity() {
             if(username_new.isNotEmpty() && email_new.isNotEmpty() && password_new.isNotEmpty() && confirm_password.isNotEmpty()){
                 if(password_new==confirm_password&&dbhelpe.VerifyUser(username_new,password_new)!=true){
                     dbhelpe.addNewUser(username_new,email_new,password_new)
-                    DataAdded.setTitle("Message")
-                    DataAdded.setMessage("\nAccount registered succesfully")
-                    DataAdded.setPositiveButton("Ok"){dialog,which->
+                    DataAdded.setTitle(R.string.AlertDg_common_title)
+                    DataAdded.setMessage(R.string.AlertDg_message_SuccSignUp)
+                    DataAdded.setPositiveButton(R.string.AlertDg_possbtn_text){dialog,which->
                         ToMain()
                     }
                     DataAdded.show()
@@ -42,11 +42,16 @@ class SignUpActivity : AppCompatActivity() {
                     binding.editConfirmPassword.text?.clear()
                 }else{
                     /** mostrar toast con error si el nombre de usuario y contraseña ya existen */
-                    DataAdded.setTitle("Message")
-                    DataAdded.setMessage("\nPassword doesn't match or the user is already exist!! :(")
-                    DataAdded.setPositiveButton("Ok",null)
+                    DataAdded.setTitle(R.string.AlertDg_common_title)
+                    DataAdded.setMessage(R.string.AlertDg_message_ErrSignUp)
+                    DataAdded.setPositiveButton(R.string.AlertDg_possbtn_text,null)
                     DataAdded.show()
                 }
+            }else{
+                DataAdded.setTitle(R.string.AlertDg_common_title)
+                DataAdded.setMessage(R.string.AlertDg_message_EmptySignUp)
+                DataAdded.setPositiveButton(R.string.AlertDg_possbtn_text,null)
+                DataAdded.show()
             }
         }
     }
