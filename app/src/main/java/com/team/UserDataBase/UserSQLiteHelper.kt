@@ -31,12 +31,26 @@ class UserSQLiteHelper (context: Context):SQLiteOpenHelper(context,DATABASE_NAME
         onCreate(db)
     }
 
+    fun addNewUser(username:String,email:String,password:String){
+        val UsersData=ContentValues()
+        val dbwriter=this.writableDatabase
+
+        UsersData.put(KEY_USERNAME,username)
+        UsersData.put(KEY_EMAIL,email)
+        UsersData.put(KEY_PSWD,password)
+
+        dbwriter.insert(TABLE_NAME,null,UsersData)
+        dbwriter.close()
+    }
+
     fun addMasterUser (){
         val values=ContentValues()
+        val dbwriter=this.writableDatabase
+
         values.put(KEY_USERNAME,"admin")
         values.put(KEY_EMAIL,"admin@gmail.com")
         values.put(KEY_PSWD,"admin")
-        val dbwriter=this.writableDatabase
+
         dbwriter.insert(TABLE_NAME,null,values)
         dbwriter.close()
     }

@@ -28,7 +28,6 @@ class LoginActivity : AppCompatActivity() {
         var contra = findViewById<TextView>(R.id.textForgotPassword)
 
         bind.buttonLogin.setOnClickListener{
-            var Chance:Int=3
             var username=bind.editUsername.text.toString()
             var password=bind.editPassword.text.toString()
 
@@ -37,23 +36,17 @@ class LoginActivity : AppCompatActivity() {
             }else{
                 var ad = AlertDialog.Builder(this)
                 ad.setTitle("Message")
-                ad.setMessage("Username or password is incorrect!! \nREMAINING OPORTUNITIES: "+Chance)
+                ad.setMessage("\nUps, Username or password is incorrect!!")
                 ad.setPositiveButton("Ok", null)
                 ad.show()
-                Chance--
-                if(Chance==0){
-                    Chance=3
-                    finish()
-                }
             }
-
         }
         /*
         //login to access to Main without DB
         var LoginButton=findViewById<Button>(R.id.buttonLogin)
-        LoginButton.setOnClickListener(View.OnClickListener { ToMain() })
+        LoginButton.setOnClickListener(View.OnClickListener { ToMain() })*/
 
-        contra.setOnClickListener(View.OnClickListener { contraToast() })*/
+        contra.setOnClickListener(View.OnClickListener { contraToast() })
     }
 
     fun contraToast() {
