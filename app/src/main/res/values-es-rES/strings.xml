@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="forgot_password"><u>¿Has olvidado tu contraseña?</u></string>
+    <string name="sign_up"><u>Crear cuenta</u></string>
+    <string name="acerca_de">Acerca de</string>
+    <string name="ajustes">Ajustes</string>
+    <string name="cerrar_sesion">Cerrar sesion</string>
+    <string name="app_by">App por:</string>
+    <string name="icons_by">Iconos por:</string>
+    <string name="backgrounds_by">Fondos por:</string>
+    <string name="interface_settings">Ajustes de Interfaz</string>
+    <string name="idioma">Idioma:</string>
+    <string name="app_settings">Ajustes de la aplicación</string>
+    <string name="dark_mode">Modo noche:</string>
+    <string name="log_out">Cerrar sesion</string>
+    <string name="log_in">Iniciar Sesión</string>
+    <string name="welcome">¡Bienvenida/o de vuelta</string>
+    <string name="glad_to_see_ya">Nos alegramos de verte :)</string>
+    <string name="username">Nombre de usuario</string>
+    <string name="password">Contraseña</string>
+    <string name="email">Email</string>
+    <string name="repeat_pass">Repite la contraseña</string>
+    <string name="crear_cuenta2">CREAR CUENTA</string>
+    <string name="bienvenido">¡BIENVENIDO! :)</string>
+</resources>

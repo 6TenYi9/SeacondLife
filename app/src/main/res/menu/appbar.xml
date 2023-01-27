@@ -4,20 +4,18 @@
     <item android:id="@+id/menu"
         android:icon="@drawable/appmenu"
         android:title="menu"
-        app:showAsAction="ifRoom" >
-        <menu xmlns:app="http://schemas.android.com/apk/res-auto"
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:background="#0077B6B2">
+        app:showAsAction="always" >
+        <menu android:background="#0077B6B2">
             <item android:id="@+id/about"
-                android:title="about"
+                android:title="@string/acerca_de"
                 android:icon="@drawable/information"
                 app:showAsAction="withText|ifRoom"/>
             <item android:id="@+id/Settings"
-                android:title="Settings"
+                android:title="@string/ajustes"
                 android:icon="@drawable/settings"
                 app:showAsAction="withText|ifRoom"/>
             <item android:id="@+id/LogOut"
-                android:title="LogOut"
+                android:title="@string/cerrar_sesion"
                 android:icon="@drawable/logout"
                 app:showAsAction="withText|ifRoom"/>
 

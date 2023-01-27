@@ -1,4 +1,4 @@
-package com.team.seacondlife.fragments
+package com.team.seacondlife
 
 import android.annotation.SuppressLint
 import android.content.ContentValues
