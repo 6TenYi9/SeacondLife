@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F8F8F8"
+    android:background="@drawable/fondolog"
     tools:context=".SignUpActivity">
 
     <TextView
@@ -31,7 +31,7 @@
         app:layout_constraintEnd_toEndOf="@id/guideline2"
         app:layout_constraintStart_toStartOf="@id/guideline1"
         app:layout_constraintTop_toBottomOf="@id/textSignUp"
-        app:startIconDrawable="@android:drawable/presence_online">
+        app:startIconDrawable="@android:drawable/star_on">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/editUsername"
@@ -97,7 +97,7 @@
             android:backgroundTint="@color/white"
             android:gravity="start"
             android:hint="@string/password"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:maxLines="1"
             android:textAlignment="textStart"
             android:textColor="@color/black"
@@ -128,7 +128,7 @@
             android:backgroundTint="@color/white"
             android:gravity="start"
             android:hint="@string/repeat_pass"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:maxLines="1"
             android:textAlignment="textStart"
             android:textColor="@color/black"

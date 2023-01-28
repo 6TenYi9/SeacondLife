@@ -25,7 +25,7 @@
     <string name="email">Correo electrónico</string>
     <string name="repeat_pass">Repite contraseña</string>
     <string name="crear_cuenta2">CREAR CUENTA</string>
-    <string name="bienvenido">Bienvenido</string>
+    <string name="bienvenido">Bienvenido/a</string>
     <string name="cerrar_sesion">log out</string>
     <string name="AlertDg_common_title">Mensaje</string>
     <string name="AlertDg_possbtn_text">Ok</string>

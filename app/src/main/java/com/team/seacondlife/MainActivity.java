@@ -1,5 +1,6 @@
 package com.team.seacondlife;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -152,5 +153,32 @@ public class MainActivity extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.appbar, menu);
         return true;
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.LogOut) {
+            Intent intent = new Intent(this,LoginActivity.class);
+            startActivity(intent);
+            Toast toast = Toast.makeText(this, "Cerrando sesion...", Toast.LENGTH_LONG);
+            toast.show();
+        }
+        if (id == R.id.about) {
+            Intent intent = new Intent(this, AboutActivity.class);
+            startActivity(intent);
+        }
+        if (id == R.id.Settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+        }
+
+
+        return super.onOptionsItemSelected(item);
+    }
+
 
 }
