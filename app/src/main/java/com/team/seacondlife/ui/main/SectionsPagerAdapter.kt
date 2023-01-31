@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.team.seacondlife.fragments.MainFragment
+import com.team.seacondlife.fragments.TipsFragment
+import com.team.seacondlife.fragments.UserInfoFragment
 
 
 /**
@@ -25,10 +27,10 @@ class SectionsPagerAdapter(//    @StringRes
         //sustituimos el fragmento único por nuestros cuatro fragmentos, así, el método getItem devuelve el fragmento
         // que corresponde a la posición que se le pasa a la clase Fragment como argumento
         return when (position) {
-            0 -> MainFragment()
+            0 -> TipsFragment()
             1 -> MainFragment()
-            2 -> MainFragment()
-            else -> MainFragment()
+            2 -> UserInfoFragment()
+            else -> UserInfoFragment()
         }
     }
 

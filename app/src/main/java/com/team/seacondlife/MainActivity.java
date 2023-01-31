@@ -8,11 +8,13 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
+
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
+
 import com.team.seacondlife.databinding.ActivityMainBinding;
 import com.team.seacondlife.ui.main.SectionsPagerAdapter;
 
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -59,9 +62,12 @@ public class MainActivity extends AppCompatActivity {
 
         // crear badges
         BottomNavigationMenuView bottomNavigationMenuView =
-        (BottomNavigationMenuView) mybottomNavView.getChildAt(0);
-        View v = bottomNavigationMenuView.getChildAt(2);
+                (BottomNavigationMenuView) mybottomNavView.getChildAt(0);
+        View v = bottomNavigationMenuView.getChildAt(0);
         BottomNavigationItemView itemView = (BottomNavigationItemView) v;
+
+        viewPager1.setCurrentItem(1);
+        mybottomNavView.getMenu().getItem(1).setChecked(true);
 
         //LayoutInflater.from(this).inflate(R.layout.layout_badge, itemView, true);
 
@@ -71,33 +77,26 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
-                    case R.id.likes:
-                    item.setChecked(true);
-                    Toast.makeText(MainActivity.this, "Likes clicked.", Toast.LENGTH_SHORT).show();
-                    removeBadge(mybottomNavView,item.getItemId());
-                    viewPager1.setCurrentItem(0);
-                    break;
+                    case R.id.tips:
+                        item.setChecked(true);
+                        Toast.makeText(MainActivity.this, "TIPS", Toast.LENGTH_SHORT).show();
+                        removeBadge(mybottomNavView, item.getItemId());
+                        viewPager1.setCurrentItem(0);
+                        break;
 
-                    case R.id.add:
-                    item.setChecked(true);
-                    Toast.makeText(MainActivity.this, "Add clicked.", Toast.LENGTH_SHORT).show();
-                    removeBadge(mybottomNavView,item.getItemId());
-                    viewPager1.setCurrentItem(1);
-                    break;
+                    case R.id.main:
+                        item.setChecked(true);
+                        Toast.makeText(MainActivity.this, "MAIN", Toast.LENGTH_SHORT).show();
+                        removeBadge(mybottomNavView, item.getItemId());
+                        viewPager1.setCurrentItem(1);
+                        break;
 
-                    case R.id.browse:
-                    item.setChecked(true);
-                    Toast.makeText(MainActivity.this, "Browse clicked.", Toast.LENGTH_SHORT).show();
-                    removeBadge(mybottomNavView,item.getItemId());
-                    viewPager1.setCurrentItem(2);
-                    break;
-
-                    case R.id.personal:
-                    item.setChecked(true);
-                    Toast.makeText(MainActivity.this, "Personal clicked.", Toast.LENGTH_SHORT).show();
-                    removeBadge(mybottomNavView,item.getItemId());
-                    viewPager1.setCurrentItem(3);
-                    break;
+                    case R.id.user_info:
+                        item.setChecked(true);
+                        Toast.makeText(MainActivity.this, "USER INFO", Toast.LENGTH_SHORT).show();
+                        removeBadge(mybottomNavView, item.getItemId());
+                        viewPager1.setCurrentItem(2);
+                        break;
 
                 }
                 return false;
@@ -117,11 +116,10 @@ public class MainActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 if (prevMenuItem != null)
                     prevMenuItem.setChecked(false);
-
                 else
-                    mybottomNavView.getMenu().getItem(0).setChecked(false);
+                    mybottomNavView.getMenu().getItem(1).setChecked(false);
                 mybottomNavView.getMenu().getItem(position).setChecked(true);
-                removeBadge(mybottomNavView,mybottomNavView.getMenu().getItem(position).getItemId());
+                removeBadge(mybottomNavView, mybottomNavView.getMenu().getItem(position).getItemId());
                 prevMenuItem = mybottomNavView.getMenu().getItem(position);
             }
 
@@ -162,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.LogOut) {
-            Intent intent = new Intent(this,LoginActivity.class);
+            Intent intent = new Intent(this, LoginActivity.class);
             startActivity(intent);
             Toast toast = Toast.makeText(this, "Cerrando sesion...", Toast.LENGTH_LONG);
             toast.show();
