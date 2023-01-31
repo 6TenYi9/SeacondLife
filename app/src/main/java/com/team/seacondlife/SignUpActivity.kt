@@ -1,5 +1,6 @@
 package com.team.seacondlife
 
+import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.content.DialogInterface
 import android.content.Intent
@@ -14,6 +15,7 @@ class SignUpActivity : AppCompatActivity() {
 
     private lateinit var binding:ActivitySignUpBinding
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivitySignUpBinding.inflate(layoutInflater)

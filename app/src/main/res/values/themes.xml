@@ -44,6 +44,10 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="CustomDialog" parent="android:Theme.Dialog">
+
+    </style>
+
     <style name="Theme.SeacondLife.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.SeacondLife.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
