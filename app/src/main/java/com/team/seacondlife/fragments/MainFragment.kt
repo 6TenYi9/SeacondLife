@@ -44,15 +44,11 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-
         super.onCreate(savedInstanceState)
         val binding = FragmentMainBinding.inflate(layoutInflater)
-
-        val view: View = binding.getRoot()
+        val view: View = binding.root
 
         setHasOptionsMenu(true);
-
-        //this.title = null
 
         binding.sea.physics.isFlingEnabled = true
         binding.sea.physics.isPhysicsEnabled
@@ -138,15 +134,8 @@ class MainFragment : Fragment() {
         return view
     }
 
-
     fun UpdateInDB(): Boolean {
         return false
     }
-
-    /*
-    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        super.onCreateOptionsMenu(menu, inflater)
-    }
-*/
 
 }
