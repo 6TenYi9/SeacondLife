@@ -4,16 +4,16 @@
 
     <item
         android:id="@+id/tips"
-        android:title="Likes"
-        android:icon="@drawable/mantarraya"
+        android:title="tips"
+        android:icon="@drawable/book"
         android:contentDescription="none"
         app:showAsAction="always"
         />
 
     <item
         android:id="@+id/main"
-        android:title="Add"
-        android:icon="@drawable/mantarraya"
+        android:title="home"
+        android:icon="@drawable/house_chimney"
         android:contentDescription="none"
         app:showAsAction="always"
         >
@@ -21,8 +21,8 @@
 
     <item
         android:id="@+id/user_info"
-        android:title="Browse"
-        android:icon="@drawable/mantarraya"
+        android:title="user"
+        android:icon="@drawable/user"
         android:contentDescription="none"
         app:showAsAction="always"
         />
