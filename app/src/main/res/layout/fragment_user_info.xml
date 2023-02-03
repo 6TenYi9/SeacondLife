@@ -4,17 +4,151 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.UserInfoFragment">
+    tools:context=".fragments.UserInfoFragment"
+    android:background="@color/lightblue">
 
-    <TextView
-        android:layout_width="wrap_content"
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideLeft"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideRight"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideTop"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.26" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideTopIMG"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.07" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideBot"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.90"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideleftIMG"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="-0.10" />
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidebotIMG"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="1.05" />
+    <LinearLayout
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="USER INFO"
-        android:textColor="@color/black"
-        android:textSize="60sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/guideTopIMG"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@id/guideLeft"
+        app:layout_constraintEnd_toEndOf="@id/guideRight"
+        android:textAlignment="center"
+
+        >
+
+        <ImageView
+            android:id="@+id/UserIcon"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:src="@drawable/usericon"
+            android:layout_gravity="left"/>
+
+        <ImageButton
+            android:id="@+id/editPicButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/edit"
+            android:layout_marginLeft="-15dp"
+            android:background="@drawable/semi_transparent_background"
+            android:layout_gravity="bottom"/>
+
+        <TextView
+            android:id="@+id/UserName"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="User Name"
+            android:textSize="30dp"
+            android:textAlignment="center"
+            android:gravity="center"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0px"
+        android:layout_height="0px"
+        android:background="@drawable/semi_transparent_background"
+        app:layout_constraintCircleRadius="200dp"
+        app:layout_constraintEnd_toEndOf="@id/guideRight"
+        app:layout_constraintStart_toStartOf="@id/guideLeft"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="@id/guideTop"
+        app:layout_constraintBottom_toTopOf="@id/guideBot" >
+        <TextView
+                android:layout_margin="40dp"
+                android:id="@+id/points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/points"
+                android:textColor="@color/black"
+                android:textSize="25dp" />
+        <TextView
+            android:layout_marginLeft="40dp"
+            android:id="@+id/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/till_next_fish"
+            android:textColor="@color/black"
+            android:textSize="20dp" />
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="200dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginTop="20dp"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            tools:progress="50"
+            android:indeterminate="true"
+            android:layout_height="wrap_content"
+            android:progressTint="@color/blue"
+            />
+
+        <TextView
+            android:id="@+id/pointsLeft"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="20/30"
+            android:textColor="@color/green"/>
+
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="304dp"
+        android:layout_height="294dp"
+        android:src="@drawable/wave"
+        app:layout_constraintBottom_toBottomOf="@id/guidebotIMG"
+        app:layout_constraintStart_toStartOf="@id/guideleftIMG"
+         />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

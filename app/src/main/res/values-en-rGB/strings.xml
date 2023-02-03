@@ -29,4 +29,6 @@
     <string name="AlertDg_message_ErrSignUp">\\nPassword doesn\'t match or the user is already exist!! :(</string>
     <string name="AlertDg_message_SuccSignUp">\\nAccount registered succesfully!!</string>
     <string name="AlertDg_message_EmptySignUp">\\nThere are empty field</string>
+    <string name="till_next_fish">Till next fish:</string>
+    <string name="points">Points:</string>
 </resources>
