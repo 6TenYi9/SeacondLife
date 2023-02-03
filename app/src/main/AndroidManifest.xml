@@ -13,9 +13,8 @@
         android:theme="@style/Theme.SeacondLife"
         tools:targetApi="31">
         <activity
-            android:name=".TipsActivity"
-            android:exported="false"
-            android:parentActivityName=".MainActivity">
+            android:name=".TipsFragment"
+            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -25,13 +24,6 @@
             android:exported="false"
             android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.appbar2">
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
-            android:name=".UserInfoActivity"
-            android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
