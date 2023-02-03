@@ -115,14 +115,14 @@ class MainFragment : Fragment() {
                 while (true) {
                     if (!conf) {
                         binding.sea.physics.setGravity(
-                            ((Math.random() * 9) * (0.1)).toFloat(),
-                            ((Math.random() * 9) * (0.1)).toFloat()
+                            ((Math.random() * 9) * (1)).toFloat(),
+                            ((Math.random() * 9) * (1)).toFloat()
                         )
                         conf = true
                     } else {
                         binding.sea.physics.setGravity(
-                            ((Math.random() * 9) * (-0.1)).toFloat(),
-                            ((Math.random() * 9) * (-0.1)).toFloat()
+                            ((Math.random() * 9) * (-1)).toFloat(),
+                            ((Math.random() * 9) * (-1)).toFloat()
                         )
                         conf = false
                     }
