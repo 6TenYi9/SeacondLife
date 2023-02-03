@@ -26,6 +26,7 @@ class LoginActivity : AppCompatActivity() {
 
         //dbhelp.addMasterUser()
 
+
         var contra = findViewById<TextView>(R.id.textForgotPassword)
 
         bind.buttonLogin.setOnClickListener{
@@ -37,9 +38,10 @@ class LoginActivity : AppCompatActivity() {
             }else{
                 var ad = Dialog(this)
                 ad.setContentView(R.layout.dialog_style)
-                //ad.setTitle(R.string.AlertDg_common_title)
-                //ad.setMessage(R.string.AlertDg_message_ErrLogin)
-                //ad.setPositiveButton(R.string.AlertDg_possbtn_text, null)
+                ad.findViewById<TextView>(R.id.DialogMessage).setText(R.string.AlertDg_message_ErrLogin)
+                ad.findViewById<Button>(R.id.DialogButton).setOnClickListener{
+                    ad.dismiss()
+                }
                 ad.show()
             }
         }
