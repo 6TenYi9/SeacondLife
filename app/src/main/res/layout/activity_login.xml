@@ -102,7 +102,7 @@
             android:backgroundTint="@color/white"
             android:gravity="start"
             android:hint="@string/password"
-            android:inputType="text"
+            android:inputType="textPassword"
             android:maxLines="1"
             android:textAlignment="textStart"
             android:textColor="@color/black"

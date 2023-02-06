@@ -29,4 +29,6 @@
     <string name="AlertDg_message_ErrSignUp">\\nLas contraseñas no coinciden o el usuario ya existe :(</string>
     <string name="AlertDg_message_SuccSignUp">\\nCuenta registrada con éxito!!</string>
     <string name="AlertDg_message_EmptySignUp">\\nHay campos vacios</string>
+    <string name="till_next_fish">Hasta el siguiente pez:</string>
+    <string name="points">Puntos:</string>
 </resources>
