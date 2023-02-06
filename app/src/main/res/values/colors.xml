@@ -14,4 +14,6 @@
     <color name="green">#35a45f</color>
     <color name="colorAccent">#FFFFFFFF</color>
 
+    <color name="transparent_grey">#575657</color>
+
 </resources>
