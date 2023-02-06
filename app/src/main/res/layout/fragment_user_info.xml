@@ -126,7 +126,6 @@
             android:layout_marginTop="20dp"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
             tools:progress="50"
-            android:indeterminate="true"
             android:layout_height="wrap_content"
             android:progressTint="@color/blue"
             />
