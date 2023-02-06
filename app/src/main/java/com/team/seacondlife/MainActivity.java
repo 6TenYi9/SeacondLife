@@ -97,7 +97,6 @@ public class MainActivity extends AppCompatActivity {
                         removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(2);
                         break;
-
                 }
                 return false;
             }
