@@ -136,8 +136,7 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:gravity="center"
-            android:text="20/30"
-            android:textColor="@color/green"/>
+            android:text="20/30" />
 
     </LinearLayout>
 
