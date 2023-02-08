@@ -2,6 +2,7 @@ package com.team.seacondlife
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.team.UserDataBase.UserSQLiteHelper
 import com.team.seacondlife.databinding.ActivityLoginBinding
+import com.team.seacondlife.fragments.UserInfoFragment
 
 class LoginActivity : AppCompatActivity() {
 
@@ -34,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             var password=bind.editPassword.text.toString()
 
             if(dbhelp.VerifyUser(username,password) == true){
-                ToMain()
+                ToMain(username)
             }else{
                 var ad = Dialog(this)
                 ad.setContentView(R.layout.dialog_style)
@@ -58,8 +60,10 @@ class LoginActivity : AppCompatActivity() {
         toast.show()
     }
 
-    fun ToMain(){
-        val intent=Intent (this, MainActivity::class.java)
+    fun ToMain(username:String){
+        val intent=Intent (this, MainActivity::class.java).apply {
+            putExtra("name",username)
+        }
         startActivity(intent)
     }
 }

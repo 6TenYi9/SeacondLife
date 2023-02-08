@@ -1,5 +1,6 @@
 package com.team.seacondlife;
 
+import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -16,6 +17,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
 import com.team.seacondlife.databinding.ActivityMainBinding;
+import com.team.seacondlife.fragments.UserInfoFragment;
 import com.team.seacondlife.ui.main.SectionsPagerAdapter;
 
 import com.google.android.material.bottomnavigation.BottomNavigationItemView;
@@ -38,6 +40,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setTitle(null);
+
+        //recibe el nombre del usuario
+        String user= getIntent().getStringExtra("name");
+        //envia el nombre al fragment UserInfo
+        SendUserName(user);
 
         //el adaptador coloca las Pages -los fragmentos con las diferentes vistas- dentro de la vista padre Viewpager del xml
         sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
@@ -177,5 +184,9 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void SendUserName(String user){
+        Intent intent=new Intent(this,UserInfoFragment.class);
+        intent.putExtra("names",user);
+    }
 
 }
