@@ -15,7 +15,7 @@
         <item name="windowNoTitle">true</item>
     </style>
 
-    <style name="Theme.appbar" parent="Theme.SeacondLife">
+    <style name="Theme.appbar" parent="Theme.MaterialComponents.Light.DarkActionBar">
         <item name="colorPrimary">@android:color/transparent</item>
         <item name="colorOnSecondary">@color/white</item>
         <item name="windowActionBarOverlay">true</item>
