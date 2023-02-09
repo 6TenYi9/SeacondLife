@@ -15,6 +15,7 @@ import com.team.seacondlife.R
 
 class TipsFragment : Fragment() {
 
+    //hay que arreglar el boton
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

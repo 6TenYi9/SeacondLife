@@ -1,6 +1,9 @@
 package com.team.seacondlife;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.res.ColorStateList;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,6 +14,7 @@ import android.widget.Toast;
 
 import androidx.annotation.IdRes;
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
@@ -29,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem prevMenuItem;
     private SectionsPagerAdapter sectionsPagerAdapter;
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,6 +48,9 @@ public class MainActivity extends AppCompatActivity {
         sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
 //        ViewPager viewPager = binding.viewPager;
         ViewPager viewPager1 = findViewById(R.id.view_pager);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+            viewPager1.setOutlineSpotShadowColor(R.color.colorAccent);
+        }
         viewPager1.setAdapter(sectionsPagerAdapter);
 //        TabLayout tabs = binding.tabs;
 //        tabs.setupWithViewPager(viewPager);
@@ -73,27 +81,25 @@ public class MainActivity extends AppCompatActivity {
 
 
         mybottomNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
                     case R.id.tips:
                         item.setChecked(true);
-                        Toast.makeText(MainActivity.this, "TIPS", Toast.LENGTH_SHORT).show();
                         removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(0);
                         break;
 
                     case R.id.main:
                         item.setChecked(true);
-                        Toast.makeText(MainActivity.this, "MAIN", Toast.LENGTH_SHORT).show();
                         removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(1);
                         break;
 
                     case R.id.user_info:
                         item.setChecked(true);
-                        Toast.makeText(MainActivity.this, "USER INFO", Toast.LENGTH_SHORT).show();
                         removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(2);
                         break;
@@ -105,7 +111,7 @@ public class MainActivity extends AppCompatActivity {
 
 //        here we listen to viewpager moves and set navigations items checked or not
 
-        viewPager1.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        viewPager1.addOnPageChangeListener(new OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -118,6 +124,7 @@ public class MainActivity extends AppCompatActivity {
                 else
                     mybottomNavView.getMenu().getItem(1).setChecked(false);
                 mybottomNavView.getMenu().getItem(position).setChecked(true);
+
                 removeBadge(mybottomNavView, mybottomNavView.getMenu().getItem(position).getItemId());
                 prevMenuItem = mybottomNavView.getMenu().getItem(position);
             }
