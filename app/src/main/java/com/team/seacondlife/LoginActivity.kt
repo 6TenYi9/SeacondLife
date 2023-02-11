@@ -1,6 +1,7 @@
 package com.team.seacondlife
 
 import android.annotation.SuppressLint
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -17,13 +18,14 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var bind:ActivityLoginBinding
     val dbhelp=UserSQLiteHelper(this)
 
-    @SuppressLint("Range")
+    @SuppressLint("Range", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bind=ActivityLoginBinding.inflate(layoutInflater)
         setContentView(bind.root)
 
         dbhelp.addMasterUser()
+
 
         var contra = findViewById<TextView>(R.id.textForgotPassword)
 
@@ -34,10 +36,12 @@ class LoginActivity : AppCompatActivity() {
             if(dbhelp.VerifyUser(username,password) == true){
                 ToMain()
             }else{
-                var ad = AlertDialog.Builder(this)
-                ad.setTitle(R.string.AlertDg_common_title)
-                ad.setMessage(R.string.AlertDg_message_ErrLogin)
-                ad.setPositiveButton(R.string.AlertDg_possbtn_text, null)
+                var ad = Dialog(this)
+                ad.setContentView(R.layout.dialog_style)
+                ad.findViewById<TextView>(R.id.DialogMessage).setText(R.string.AlertDg_message_ErrLogin)
+                ad.findViewById<Button>(R.id.DialogButton).setOnClickListener{
+                    ad.dismiss()
+                }
                 ad.show()
             }
         }

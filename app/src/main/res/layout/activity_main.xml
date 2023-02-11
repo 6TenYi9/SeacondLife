@@ -23,7 +23,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:backgroundTint="#90E0EF"
             android:elevation="18dp"
             android:src="@drawable/camera"
             app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
@@ -39,7 +38,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:menu="@menu/bottom_navigation_menu" />
+            app:menu="@menu/bottom_navigation_menu"
+            android:background="@color/darkblue"
+            app:itemTextColor="@color/white"
+            app:itemIconTint="@color/white"/>
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
