@@ -1,20 +1,20 @@
 package com.team.seacondlife.fragments
 
-import android.content.Intent
-import android.content.Intent.getIntent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import com.team.seacondlife.R
+import android.widget.ProgressBar
 import com.team.seacondlife.databinding.FragmentUserInfoBinding
-import kotlin.math.log
+import kotlinx.coroutines.*
 
 
 class UserInfoFragment : Fragment() {
     private lateinit var bind:FragmentUserInfoBinding
+    private val scope= MainScope()
+
+
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,8 +29,40 @@ class UserInfoFragment : Fragment() {
         val name=activity?.intent!!.extras!!.getString("name")
         bind.UserName.text=name
 
+        bind.pointsLeft.text="0/10"
+
+        scope.launch {
+            while (true)
+                progress(bind.progressBar)
+        }
 
 
         return view
     }
+
+    private suspend fun progress(progressBar: ProgressBar){
+        progressBar.max=10
+        while(true){
+            delay(1000)
+        if(progressBar.progress < progressBar.max) {
+            progressBar.progress=points
+            bind.pointsLeft.text= "$points/10"
+            points++
+        }else {
+            progressBar.progress = 0
+            points = 0
+            bind.pointsLeft.text = "$points/10"
+        }
+        }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        scope.cancel()
+    }
+
+    companion object{
+        var points = 0
+    }
 }
+

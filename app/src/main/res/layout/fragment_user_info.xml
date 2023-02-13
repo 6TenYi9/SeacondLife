@@ -124,8 +124,8 @@
             android:layout_marginLeft="80dp"
             android:layout_marginTop="20dp"
             style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-            tools:progress="50"
-            android:indeterminate="true"
+            tools:progress="0"
+            android:indeterminate="false"
             android:layout_height="wrap_content"
             android:progressTint="@color/blue"
             />
@@ -136,7 +136,6 @@
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:gravity="center"
-            android:text="20/30"
             android:textColor="@color/green"/>
 
     </LinearLayout>
