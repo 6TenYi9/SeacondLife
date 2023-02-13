@@ -22,6 +22,21 @@ class CodeScanner : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_code_scanner)
         barcodeResultView = findViewById(R.id.barcode_result_view)
+
+        //saltar directamente a la cámara
+        val optionsBuilder = GmsBarcodeScannerOptions.Builder()
+        optionsBuilder.allowManualInput()
+        val gmsBarcodeScanner = GmsBarcodeScanning.getClient(this, optionsBuilder.build())
+        gmsBarcodeScanner
+            .startScan()
+            .addOnSuccessListener { barcode: Barcode ->
+                barcodeResultView!!.text = getSuccessfulMessage(barcode)
+            }
+            .addOnFailureListener { e: Exception -> barcodeResultView!!.text = getErrorMessage(e) }
+            .addOnCanceledListener {
+                barcodeResultView!!.text = getString(R.string.error_scanner_cancelled)
+            }
+
     }
 
     fun onAllowManualInputCheckboxClicked(view: View) {
