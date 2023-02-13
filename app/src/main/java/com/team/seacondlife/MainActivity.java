@@ -16,6 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.team.seacondlife.codescanner.CodeScanner;
 import com.team.seacondlife.databinding.ActivityMainBinding;
 import com.team.seacondlife.fragments.UserInfoFragment;
 import com.team.seacondlife.ui.main.SectionsPagerAdapter;
@@ -30,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
     private ActivityMainBinding binding;
     private MenuItem prevMenuItem;
     private SectionsPagerAdapter sectionsPagerAdapter;
+    private FloatingActionButton cameraButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,6 +80,17 @@ public class MainActivity extends AppCompatActivity {
         mybottomNavView.getMenu().getItem(1).setChecked(true);
 
         //LayoutInflater.from(this).inflate(R.layout.layout_badge, itemView, true);
+
+
+        cameraButton = findViewById(R.id.camera_button);
+
+        cameraButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this, CodeScanner.class));
+            }
+        });
+
 
 
         mybottomNavView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
