@@ -46,6 +46,14 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="botbar">
+        <item name="colorSurface">@color/darkblue</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="itemIconTint">@color/white</item>
+        <item name="backgroundColor">@color/darkblue</item>
+        <item name="background">@color/darkblue</item>
+    </style>
+
     <style name="Theme.SeacondLife.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.SeacondLife.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
