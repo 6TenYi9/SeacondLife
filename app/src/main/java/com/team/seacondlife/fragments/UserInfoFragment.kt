@@ -6,6 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ProgressBar
+import android.widget.Toast
+import com.team.UserDataBase.UserSQLiteHelper
+import com.team.seacondlife.MainActivity
 import com.team.seacondlife.databinding.FragmentUserInfoBinding
 import kotlinx.coroutines.*
 
@@ -13,8 +16,7 @@ import kotlinx.coroutines.*
 class UserInfoFragment : Fragment() {
     private lateinit var bind:FragmentUserInfoBinding
     private val scope= MainScope()
-
-
+    private lateinit var progress:ProgressBar
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,20 +29,30 @@ class UserInfoFragment : Fragment() {
 
         //get the user name
         val name=activity?.intent!!.extras!!.getString("name")
+        var point=activity?.intent!!.extras!!.getInt("p")
         bind.UserName.text=name
 
         bind.pointsLeft.text="0/10"
 
-        scope.launch {
+        /*scope.launch {
             while (true)
                 progress(bind.progressBar)
-        }
+        }*/
 
+        progress=bind.progressBar
+        progress.max=10
+        if(progress.progress<progress.max){
+            point -= (point / 10) * 10
+            progress.progress=point
+            bind.pointsLeft.text="${(point).toString()}/10"
+        }else{
+
+        }
 
         return view
     }
 
-    private suspend fun progress(progressBar: ProgressBar){
+    /*private suspend fun progress(progressBar: ProgressBar){
         progressBar.max=10
         while(true){
             delay(1000)
@@ -63,6 +75,6 @@ class UserInfoFragment : Fragment() {
 
     companion object{
         var points = 0
-    }
+    }*/
 }
 

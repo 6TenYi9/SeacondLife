@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         bind=ActivityLoginBinding.inflate(layoutInflater)
         setContentView(bind.root)
 
-        dbhelp.addMasterUser()
+        //dbhelp.addMasterUser()
 
 
         var contra = findViewById<TextView>(R.id.textForgotPassword)
@@ -36,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             var password=bind.editPassword.text.toString()
 
             if(dbhelp.VerifyUser(username,password) == true){
-                ToMain(username)
+                ToMain(username,password)
             }else{
                 var ad = Dialog(this)
                 ad.setContentView(R.layout.dialog_style)
@@ -60,9 +60,11 @@ class LoginActivity : AppCompatActivity() {
         toast.show()
     }
 
-    fun ToMain(username:String){
+    fun ToMain(username:String,password:String){
+        var point=dbhelp.getUserPoints(username,password)
         val intent=Intent (this, MainActivity::class.java).apply {
             putExtra("name",username)
+            putExtra("p",point)
         }
         startActivity(intent)
     }

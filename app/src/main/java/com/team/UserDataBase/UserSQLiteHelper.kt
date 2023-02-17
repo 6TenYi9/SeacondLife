@@ -11,16 +11,17 @@ import androidx.appcompat.app.AlertDialog
 
 class UserSQLiteHelper (context: Context):SQLiteOpenHelper(context,DATABASE_NAME,null,DATABASE_VERSION){
     companion object{
-        private val DATABASE_VERSION=3
+        private val DATABASE_VERSION=5
         private val DATABASE_NAME="MasterDataBase"
         private val TABLE_NAME="UserDataBase"
         private val KEY_USERNAME="username"
         private val KEY_EMAIL="email"
         private val KEY_PSWD="password"
+        private val KEY_POINT="point"
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val SQLCommant="CREATE TABLE "+TABLE_NAME+"("+KEY_USERNAME+" TEXT NOT NULL,"+KEY_EMAIL+" TEXT NOT NULL,"+KEY_PSWD+" TEXT NOT NULL,UserId INTEGER PRIMARY KEY AUTOINCREMENT)"
+        val SQLCommant="CREATE TABLE "+TABLE_NAME+"("+KEY_USERNAME+" TEXT NOT NULL,"+KEY_EMAIL+" TEXT NOT NULL,"+KEY_PSWD+" TEXT NOT NULL,"+KEY_POINT+" INTEGER NOT NULL,UserId INTEGER PRIMARY KEY AUTOINCREMENT)"
         db!!.execSQL(
             SQLCommant
         )
@@ -38,6 +39,7 @@ class UserSQLiteHelper (context: Context):SQLiteOpenHelper(context,DATABASE_NAME
         UsersData.put(KEY_USERNAME,username)
         UsersData.put(KEY_EMAIL,email)
         UsersData.put(KEY_PSWD,password)
+        UsersData.put(KEY_POINT,0)
 
         dbwriter.insert(TABLE_NAME,null,UsersData)
         dbwriter.close()
@@ -50,9 +52,30 @@ class UserSQLiteHelper (context: Context):SQLiteOpenHelper(context,DATABASE_NAME
         values.put(KEY_USERNAME,"admin")
         values.put(KEY_EMAIL,"admin@gmail.com")
         values.put(KEY_PSWD,"admin")
+        values.put(KEY_POINT,40)
 
         dbwriter.insert(TABLE_NAME,null,values)
         dbwriter.close()
+    }
+
+    @SuppressLint("Range")
+    fun getUserPoints(username:String, password:String):Int{
+        var point=0
+        val dbreader=this.readableDatabase
+        val rs=dbreader.rawQuery(
+            "SELECT "+KEY_POINT+" FROM "+TABLE_NAME+" WHERE "+KEY_USERNAME+"='"+username+"' AND "+KEY_PSWD+"='"+password+"'",
+            null
+        )
+        if(rs.moveToFirst()){
+            point=rs.getInt(rs.getColumnIndex(KEY_POINT))
+            rs.close()
+        }
+        dbreader.close()
+        return point
+    }
+
+    fun UpdateUserPoints(){
+
     }
 
     @SuppressLint("Range")
@@ -69,6 +92,7 @@ class UserSQLiteHelper (context: Context):SQLiteOpenHelper(context,DATABASE_NAME
         }else{
             exist=false
         }
+        dbreader.close()
         return exist
     }
 }
