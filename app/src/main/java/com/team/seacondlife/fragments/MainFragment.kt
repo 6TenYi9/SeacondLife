@@ -39,6 +39,7 @@ class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     private var index: Int = 0
     private var cont: Int = 0
+    private var point:Int=0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -82,7 +83,7 @@ class MainFragment : Fragment() {
             override fun onCollisionExited(viewIdA: Int, viewIdB: Int) {}
         })*/
         //capturo la puntuación del usuario
-        var point=activity?.intent!!.extras!!.getInt("p")
+        point=activity?.intent!!.extras!!.getInt("p")
         //añadir peces según la puntuación del usuario
         val pez = ImageView(context)
         var fishtoadd=point-(point/10)*10

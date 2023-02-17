@@ -9,6 +9,7 @@ import android.widget.ProgressBar
 import android.widget.Toast
 import com.team.UserDataBase.UserSQLiteHelper
 import com.team.seacondlife.MainActivity
+import com.team.seacondlife.R
 import com.team.seacondlife.databinding.FragmentUserInfoBinding
 import kotlinx.coroutines.*
 
@@ -46,7 +47,7 @@ class UserInfoFragment : Fragment() {
             progress.progress=point
             bind.pointsLeft.text="${(point).toString()}/10"
         }else{
-
+            Toast.makeText(context,R.string.error,Toast.LENGTH_LONG).show()
         }
 
         return view
