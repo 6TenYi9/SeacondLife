@@ -15,7 +15,7 @@ import java.util.Locale
 /** Demonstrates the code scanner powered by Google Play Services. */
 class CodeScanner : AppCompatActivity() {
 
-    private var allowManualInput = false
+    private var allowManualInput = true
     private var barcodeResultView: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,9 +24,12 @@ class CodeScanner : AppCompatActivity() {
         barcodeResultView = findViewById(R.id.barcode_result_view)
     }
 
+    /*
     fun onAllowManualInputCheckboxClicked(view: View) {
         allowManualInput = (view as CheckBox).isChecked
     }
+     */
+
 
     fun onScanButtonClicked(view: View) {
         val optionsBuilder = GmsBarcodeScannerOptions.Builder()
