@@ -29,6 +29,7 @@ class UserInfoFragment : Fragment() {
         val view: View =bind.root //inflater.inflate(R.layout.fragment_user_info,container,false)
 
         //get the user name
+        try{
         val name=activity?.intent!!.extras!!.getString("name")
         var point=activity?.intent!!.extras!!.getInt("p")
         bind.UserName.text=name
@@ -49,7 +50,7 @@ class UserInfoFragment : Fragment() {
         }else{
             Toast.makeText(context,R.string.error,Toast.LENGTH_LONG).show()
         }
-
+        }catch(e:java.lang.NullPointerException){}
         return view
     }
 

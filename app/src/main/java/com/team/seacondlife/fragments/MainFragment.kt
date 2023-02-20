@@ -83,7 +83,9 @@ class MainFragment : Fragment() {
             override fun onCollisionExited(viewIdA: Int, viewIdB: Int) {}
         })*/
         //capturo la puntuación del usuario
-        point=activity?.intent!!.extras!!.getInt("p")
+        try {
+            point = activity?.intent!!.extras!!.getInt("p")
+        }catch(e:java.lang.NullPointerException){}
         //añadir peces según la puntuación del usuario
         val pez = ImageView(context)
         var fishtoadd=point-(point/10)*10
