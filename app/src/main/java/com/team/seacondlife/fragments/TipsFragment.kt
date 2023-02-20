@@ -24,8 +24,6 @@ class TipsFragment : Fragment(), OnClickListener {
     ): View? {
         super.onCreate(savedInstanceState)
         val view: View = inflater.inflate(com.team.seacondlife.R.layout.fragment_tips,container,false)
-        var botMas = getView()?.findViewById<Button>(com.team.seacondlife.R.id.botonMas)
-        botMas?.setOnClickListener(this)
         return view
 
     }

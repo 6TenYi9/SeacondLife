@@ -48,6 +48,8 @@
     <string name="error_app_name_unavailable" translatable="false">App name is not set.</string>
     <string name="error_default_message" translatable="false">Failed to scan code: %1$s</string>
     <string name="reco">Please be sure your google play services are up to date! :)</string>
+    <string name="texto1">aa</string>
+    <string name="a">a</string>
 
 
 </resources>
