@@ -15,7 +15,7 @@ import java.util.Locale
 /** Demonstrates the code scanner powered by Google Play Services. */
 class CodeScanner : AppCompatActivity() {
 
-    private var allowManualInput = false
+    private var allowManualInput = true
     private var barcodeResultView: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,25 +23,11 @@ class CodeScanner : AppCompatActivity() {
         setContentView(R.layout.activity_code_scanner)
         barcodeResultView = findViewById(R.id.barcode_result_view)
 
-        //saltar directamente a la cámara
-        val optionsBuilder = GmsBarcodeScannerOptions.Builder()
-        optionsBuilder.allowManualInput()
-        val gmsBarcodeScanner = GmsBarcodeScanning.getClient(this, optionsBuilder.build())
-        gmsBarcodeScanner
-            .startScan()
-            .addOnSuccessListener { barcode: Barcode ->
-                barcodeResultView!!.text = getSuccessfulMessage(barcode)
-            }
-            .addOnFailureListener { e: Exception -> barcodeResultView!!.text = getErrorMessage(e) }
-            .addOnCanceledListener {
-                barcodeResultView!!.text = getString(R.string.error_scanner_cancelled)
-            }
-
     }
 
-    fun onAllowManualInputCheckboxClicked(view: View) {
+    /*fun onAllowManualInputCheckboxClicked(view: View) {
         allowManualInput = (view as CheckBox).isChecked
-    }
+    }*/
 
     fun onScanButtonClicked(view: View) {
         val optionsBuilder = GmsBarcodeScannerOptions.Builder()
@@ -71,6 +57,7 @@ class CodeScanner : AppCompatActivity() {
     }
 
     private fun getSuccessfulMessage(barcode: Barcode): String {
+        /*
         val barcodeValue =
             String.format(
                 Locale.US,
@@ -80,7 +67,16 @@ class CodeScanner : AppCompatActivity() {
                 barcode.format,
                 barcode.valueType
             )
-        return getString(R.string.barcode_result, barcodeValue)
+
+         */
+
+        var barcodeValue = ""
+        when(barcode.displayValue){
+            "8413402990503" -> barcodeValue = "BOTELLA DE PLÁSTICO (SAN JOAQUÍN)\nCONTENEDOR AMARILLO"
+            else -> barcodeValue = "ESTE PRODUCTO TODAVÍA NO ESTÁ EN NUESTRA BASE DE DATOS"
+        }
+
+        return barcodeValue
     }
 
     private fun getErrorMessage(e: Exception): String? {
