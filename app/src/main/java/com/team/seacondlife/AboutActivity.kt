@@ -10,6 +10,8 @@ class AboutActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
         this.setTitle("Acerca de")
+
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
@@ -17,5 +19,10 @@ class AboutActivity : AppCompatActivity() {
         inflater.inflate(R.menu.menu_simple, menu)
 
         return true
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return false
     }
 }

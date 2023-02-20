@@ -32,6 +32,7 @@ class UserInfoFragment : Fragment() {
         try{
         val name=activity?.intent!!.extras!!.getString("name")
         var point=activity?.intent!!.extras!!.getInt("p")
+
         bind.UserName.text=name
 
         bind.pointsLeft.text="0/10"
