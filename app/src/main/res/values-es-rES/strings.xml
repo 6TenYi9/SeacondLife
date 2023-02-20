@@ -31,4 +31,5 @@
     <string name="AlertDg_message_EmptySignUp">\\nHay campos vacios</string>
     <string name="till_next_fish">Hasta el siguiente pez:</string>
     <string name="points">Puntos:</string>
+    <string name="reco">Por favor, asegurate de que tus servicios de google play estan actualizados! :)</string>
 </resources>
