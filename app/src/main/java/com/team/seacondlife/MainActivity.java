@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle(null);
 
+        Intent intent=new Intent(this,CodeScanner.class);
+        intent.putExtra("names",getIntent().getExtras().getString("name"));
+        intent.putExtra("po",getIntent().getExtras().getString("po"));
 
         //el adaptador coloca las Pages -los fragmentos con las diferentes vistas- dentro de la vista padre Viewpager del xml
         sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());

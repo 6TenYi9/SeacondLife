@@ -9,6 +9,7 @@ import com.google.mlkit.common.MlKitException
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
+import com.team.UserDataBase.UserSQLiteHelper
 import com.team.seacondlife.R
 import java.util.Locale
 
@@ -17,6 +18,7 @@ class CodeScanner : AppCompatActivity() {
 
     private var allowManualInput = true
     private var barcodeResultView: TextView? = null
+    private val dbhelper=UserSQLiteHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,6 +35,11 @@ class CodeScanner : AppCompatActivity() {
 
     fun onScanButtonClicked(view: View) {
         val optionsBuilder = GmsBarcodeScannerOptions.Builder()
+        val user=intent!!.extras!!.getString("names")
+        val psw=intent!!.extras!!.getString("po")
+        if (user != null && psw != null) {
+            dbhelper.UpdateUserPoints(user,psw,dbhelper.getUserPoints(user,psw))
+        }
         if (allowManualInput) {
             optionsBuilder.allowManualInput()
         }
