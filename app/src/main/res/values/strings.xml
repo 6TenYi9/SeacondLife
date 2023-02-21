@@ -27,12 +27,15 @@
     <string name="crear_cuenta2">CREAR CUENTA</string>
     <string name="bienvenido">Bienvenido/a</string>
     <string name="cerrar_sesion">log out</string>
+    <string name="error">Ups, ha ocurrido un error inesperado :(</string>
+    <!--Alert Dialog-->
     <string name="AlertDg_common_title">Mensaje</string>
     <string name="AlertDg_possbtn_text">Ok</string>
     <string name="AlertDg_message_ErrLogin">\nUps, el usuario o contraseña introducido es incorrecto!!</string>
     <string name="AlertDg_message_ErrSignUp">\nLas contraseñas no coinciden o el usuario ya existe :(</string>
     <string name="AlertDg_message_SuccSignUp">\nCuenta registrada con éxito!!</string>
     <string name="AlertDg_message_EmptySignUp">\nHay campos vacios</string>
+
     <string name="till_next_fish">Till next fish:</string>
     <string name="points">Points:</string>
     <string name="info1">asdasdsa</string>
@@ -47,6 +50,7 @@
     <string name="error_camera_permission_not_granted" translatable="false">Camera permission is not granted.</string>
     <string name="error_app_name_unavailable" translatable="false">App name is not set.</string>
     <string name="error_default_message" translatable="false">Failed to scan code: %1$s</string>
+    <string name="reco">Please be sure your google play services are up to date! :)</string>
 
 
 </resources>

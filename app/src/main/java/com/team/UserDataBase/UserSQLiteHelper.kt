@@ -74,8 +74,10 @@ class UserSQLiteHelper (context: Context):SQLiteOpenHelper(context,DATABASE_NAME
         return point
     }
 
-    fun UpdateUserPoints(){
-
+    fun UpdateUserPoints(username:String,password:String,puntos:Int){
+        val comant="UPDATE "+TABLE_NAME+" SET "+KEY_POINT+"="+puntos+" WHERE "+KEY_USERNAME+"='"+username+"' AND "+KEY_PSWD+"='"+password+"'";
+        val dbreader=this.readableDatabase
+        dbreader!!.execSQL(comant,null)
     }
 
     @SuppressLint("Range")

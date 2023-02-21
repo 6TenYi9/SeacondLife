@@ -47,6 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle(null);
 
+
         //el adaptador coloca las Pages -los fragmentos con las diferentes vistas- dentro de la vista padre Viewpager del xml
         sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
 //        ViewPager viewPager = binding.viewPager;
@@ -194,9 +195,6 @@ public class MainActivity extends AppCompatActivity {
             startActivity(intent);
         }
 
-
         return super.onOptionsItemSelected(item);
     }
-
-
 }

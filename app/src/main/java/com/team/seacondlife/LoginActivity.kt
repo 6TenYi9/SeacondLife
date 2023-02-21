@@ -2,6 +2,7 @@ package com.team.seacondlife
 
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import com.team.UserDataBase.UserSQLiteHelper
 import com.team.seacondlife.databinding.ActivityLoginBinding
+import com.team.seacondlife.fragments.UserInfoFragment
 
 class LoginActivity : AppCompatActivity() {
 
@@ -24,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         bind=ActivityLoginBinding.inflate(layoutInflater)
         setContentView(bind.root)
 
-        dbhelp.addMasterUser()
+        //dbhelp.addMasterUser()
 
 
         var contra = findViewById<TextView>(R.id.textForgotPassword)
@@ -34,7 +36,7 @@ class LoginActivity : AppCompatActivity() {
             var password=bind.editPassword.text.toString()
 
             if(dbhelp.VerifyUser(username,password) == true){
-                ToMain()
+                ToMain(username,password)
             }else{
                 var ad = Dialog(this)
                 ad.setContentView(R.layout.dialog_style)
@@ -58,8 +60,12 @@ class LoginActivity : AppCompatActivity() {
         toast.show()
     }
 
-    fun ToMain(){
-        val intent=Intent (this, MainActivity::class.java)
+    fun ToMain(username:String,password:String){
+        var point=dbhelp.getUserPoints(username,password)
+        val intent=Intent (this, MainActivity::class.java).apply {
+            putExtra("name",username)
+            putExtra("p",point)
+        }
         startActivity(intent)
     }
 }

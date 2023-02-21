@@ -22,8 +22,8 @@
         <activity
             android:name=".SettingsActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.appbar2">
+            <!--android:parentActivityName=".MainActivity"-->
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -31,8 +31,8 @@
         <activity
             android:name=".AboutActivity"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.appbar2">
+            <!--android:parentActivityName=".MainActivity"-->
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

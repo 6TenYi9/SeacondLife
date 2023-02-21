@@ -12,6 +12,8 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
         this.setTitle("Ajustes")
+
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
     }
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater: MenuInflater = menuInflater
@@ -19,5 +21,9 @@ class SettingsActivity : AppCompatActivity() {
         return true
     }
 
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return false
+    }
 
 }

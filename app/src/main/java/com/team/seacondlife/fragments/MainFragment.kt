@@ -6,6 +6,8 @@ import android.os.Bundle
 import android.util.Log
 import android.view.*
 import android.widget.ImageView
+import android.widget.Toast
+import androidx.appcompat.widget.ActionBarOverlayLayout.LayoutParams
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.jawnnypoo.physicslayout.Physics
@@ -37,6 +39,7 @@ class MainFragment : Fragment() {
     private lateinit var binding: FragmentMainBinding
     private var index: Int = 0
     private var cont: Int = 0
+    private var point:Int=0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -45,7 +48,7 @@ class MainFragment : Fragment() {
     ): View? {
 
         super.onCreate(savedInstanceState)
-        val binding = FragmentMainBinding.inflate(layoutInflater)
+        binding = FragmentMainBinding.inflate(layoutInflater)
         val view: View = binding.root
 
         setHasOptionsMenu(true);
@@ -66,7 +69,7 @@ class MainFragment : Fragment() {
             return@setOnLongClickListener true
         }
 
-        binding.sea.physics.setOnCollisionListener(object : Physics.OnCollisionListener {
+        /*binding.sea.physics.setOnCollisionListener(object : Physics.OnCollisionListener {
             @SuppressLint("SetTextIl8n")
             override fun onCollisionEntered(viewIdA: Int, viewIdB: Int) {
                 Log.d(ContentValues.TAG, "$viewIdB")
@@ -78,8 +81,46 @@ class MainFragment : Fragment() {
             }
 
             override fun onCollisionExited(viewIdA: Int, viewIdB: Int) {}
-        })
-
+        })*/
+        //capturo la puntuación del usuario
+        try {
+            point = activity?.intent!!.extras!!.getInt("p")
+        }catch(e:java.lang.NullPointerException){}
+        //añadir peces según la puntuación del usuario
+        val pez = ImageView(context)
+        var fishtoadd=point-(point/10)*10
+        when(point){
+            in 0..9 -> {
+                pez.setImageResource(R.drawable.pez)
+                Addfish(pez,fishtoadd)
+            }
+            in 10..19 ->{
+                pez.setImageResource(R.drawable.pezpayaso)
+                Addfish(pez,fishtoadd)
+            }
+            in 20..29->{
+                pez.setImageResource(R.drawable.medusa)
+                Addfish(pez,fishtoadd)
+            }
+            in 30..39->{
+                pez.setImageResource(R.drawable.pulpo)
+                Addfish(pez,fishtoadd)
+            }
+            in 40..49->{
+                pez.setImageResource(R.drawable.mantarraya)
+                Addfish(pez,fishtoadd)
+            }
+            else ->{
+                pez.setImageResource(R.drawable.whale)
+                val layoutParams=ConstraintLayout.LayoutParams(
+                    resources.getDimensionPixelSize(R.dimen.square_size2),
+                    resources.getDimensionPixelSize(R.dimen.square_size2)
+                )
+                pez.layoutParams=layoutParams
+                for(i in 0..point)
+                    binding.sea.addView(pez)
+            }
+        }
         /*
         if (UpdateInDB()) {
             val pez = ImageView(this)
@@ -110,7 +151,7 @@ class MainFragment : Fragment() {
 
         Timer().scheduleAtFixedRate(object : TimerTask() {
             override fun run() {
-                var conf: Boolean = true;
+                var conf: Boolean = true
 
                 while (true) {
                     if (!conf) {
@@ -132,6 +173,16 @@ class MainFragment : Fragment() {
         }, 0, 10000)
 
         return view
+    }
+
+    fun Addfish(pez:ImageView,point:Int){
+        val layoutParams=ConstraintLayout.LayoutParams(
+            resources.getDimensionPixelSize(R.dimen.square_size),
+            resources.getDimensionPixelSize(R.dimen.square_size)
+        )
+        pez.layoutParams=layoutParams
+        for(i in 0..point)
+            binding.sea.addView(pez)
     }
 
     fun UpdateInDB(): Boolean {

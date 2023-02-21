@@ -22,6 +22,21 @@ android {
         enable=true
     }
 
+    buildscript {
+        repositories {
+            // Make sure that you have the following two repositories
+            google()  // Google's Maven repository
+
+            mavenCentral()  // Maven Central repository
+
+        }
+        dependencies {
+            // Add the dependency for the Google services Gradle plugin
+            classpath 'com.google.gms:google-services:4.3.15'
+
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
@@ -53,6 +68,11 @@ dependencies {
     //DataBase (firebase) implementation:
     implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
     implementation 'com.google.android.gms:play-services-code-scanner:16.0.0-beta3'
+
+    //Firebase Test implementations:
+    implementation platform('com.google.firebase:firebase-bom:31.2.2')
+    implementation 'com.google.firebase:firebase-analytics-ktx'
+
 
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'

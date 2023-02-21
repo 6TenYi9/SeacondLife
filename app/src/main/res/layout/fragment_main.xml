@@ -19,21 +19,21 @@
         app:gravityX="0.1"
         app:gravityY="0.1"
         tools:ignore="MissingConstraints">
-        <ImageView
+        <!--<ImageView
             android:layout_width="@dimen/square_size2"
             android:layout_height="@dimen/square_size2"
             android:id="@+id/animal"
             android:layout_gravity="center"
             android:src="@drawable/pezpayaso"
-            app:layout_shape="circle"/>
+            app:layout_shape="circle"/>-->
 
-        <ImageView
+        <!--<ImageView
             android:layout_width="@dimen/square_size"
             android:layout_height="@dimen/square_size"
             android:id="@+id/animal2"
             android:layout_gravity="center_vertical"
             android:src="@drawable/pez"
-            app:layout_shape="circle"/>
+            app:layout_shape="circle"/>-->
 
 
     </com.jawnnypoo.physicslayout.PhysicsFrameLayout>
