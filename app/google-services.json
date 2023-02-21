@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "623224513443",
+    "project_id": "seacondlife-fc8c3",
+    "storage_bucket": "seacondlife-fc8c3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:623224513443:android:d4fcb99f37abe052423016",
+        "android_client_info": {
+          "package_name": "com.team.seacondlife"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "623224513443-din4ai8m2p1ug2hvmjincll9amttqej0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCTXI_D727EKBtpBUubT6vpoQx5Qq8X2U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "623224513443-din4ai8m2p1ug2hvmjincll9amttqej0.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
