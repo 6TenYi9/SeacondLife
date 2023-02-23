@@ -64,6 +64,7 @@ class LoginActivity : AppCompatActivity() {
         var point=dbhelp.getUserPoints(username,password)
         val intent=Intent (this, MainActivity::class.java).apply {
             putExtra("name",username)
+            putExtra("psw",password)
             putExtra("p",point)
         }
         startActivity(intent)

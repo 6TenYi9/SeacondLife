@@ -87,38 +87,55 @@ class MainFragment : Fragment() {
             point = activity?.intent!!.extras!!.getInt("p")
         }catch(e:java.lang.NullPointerException){}
         //añadir peces según la puntuación del usuario
-        val pez = ImageView(context)
+
         var fishtoadd=point-(point/10)*10
         when(point){
             in 0..9 -> {
-                pez.setImageResource(R.drawable.pez)
-                Addfish(pez,fishtoadd)
+                for(i in 0..fishtoadd) {
+                    val pez=ImageView(context)
+                    pez.setImageResource(R.drawable.pez)
+                    Addfish(pez)
+                }
             }
             in 10..19 ->{
-                pez.setImageResource(R.drawable.pezpayaso)
-                Addfish(pez,fishtoadd)
+                for(i in 0..fishtoadd) {
+                    val pez=ImageView(context)
+                    pez.setImageResource(R.drawable.pezpayaso)
+                    Addfish(pez)
+                }
             }
             in 20..29->{
-                pez.setImageResource(R.drawable.medusa)
-                Addfish(pez,fishtoadd)
+                for(i in 0..fishtoadd) {
+                    val pez=ImageView(context)
+                    pez.setImageResource(R.drawable.medusa)
+                    Addfish(pez)
+                }
             }
             in 30..39->{
-                pez.setImageResource(R.drawable.pulpo)
-                Addfish(pez,fishtoadd)
+                for(i in 0..fishtoadd) {
+                    val pez=ImageView(context)
+                    pez.setImageResource(R.drawable.pulpo)
+                    Addfish(pez)
+                }
             }
             in 40..49->{
-                pez.setImageResource(R.drawable.mantarraya)
-                Addfish(pez,fishtoadd)
+                for(i in 0..fishtoadd) {
+                    val pez=ImageView(context)
+                    pez.setImageResource(R.drawable.mantarraya)
+                    Addfish(pez)
+                }
             }
             else ->{
-                pez.setImageResource(R.drawable.whale)
-                val layoutParams=ConstraintLayout.LayoutParams(
-                    resources.getDimensionPixelSize(R.dimen.square_size2),
-                    resources.getDimensionPixelSize(R.dimen.square_size2)
-                )
-                pez.layoutParams=layoutParams
-                for(i in 0..point)
+                for(i in 0..fishtoadd) {
+                    val pez=ImageView(context)
+                    pez.setImageResource(R.drawable.whale)
+                    val layoutParams = ConstraintLayout.LayoutParams(
+                        resources.getDimensionPixelSize(R.dimen.square_size2),
+                        resources.getDimensionPixelSize(R.dimen.square_size2)
+                    )
+                    pez.layoutParams = layoutParams
                     binding.sea.addView(pez)
+                }
             }
         }
         /*
@@ -175,14 +192,13 @@ class MainFragment : Fragment() {
         return view
     }
 
-    fun Addfish(pez:ImageView,point:Int){
+    fun Addfish(pez:ImageView){
         val layoutParams=ConstraintLayout.LayoutParams(
             resources.getDimensionPixelSize(R.dimen.square_size),
             resources.getDimensionPixelSize(R.dimen.square_size)
         )
         pez.layoutParams=layoutParams
-        for(i in 0..point)
-            binding.sea.addView(pez)
+        binding.sea.addView(pez)
     }
 
     fun UpdateInDB(): Boolean {

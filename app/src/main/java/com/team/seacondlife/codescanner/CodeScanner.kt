@@ -35,11 +35,7 @@ class CodeScanner : AppCompatActivity() {
 
     fun onScanButtonClicked(view: View) {
         val optionsBuilder = GmsBarcodeScannerOptions.Builder()
-        val user=intent!!.extras!!.getString("names")
-        val psw=intent!!.extras!!.getString("po")
-        if (user != null && psw != null) {
-            dbhelper.UpdateUserPoints(user,psw,dbhelper.getUserPoints(user,psw))
-        }
+
         if (allowManualInput) {
             optionsBuilder.allowManualInput()
         }

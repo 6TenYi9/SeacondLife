@@ -20,6 +20,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.team.UserDataBase.UserSQLiteHelper;
 import com.team.seacondlife.codescanner.CodeScanner;
 import com.team.seacondlife.databinding.ActivityMainBinding;
 import com.team.seacondlife.ui.main.SectionsPagerAdapter;
@@ -35,9 +36,11 @@ public class MainActivity extends AppCompatActivity {
     private MenuItem prevMenuItem;
     private SectionsPagerAdapter sectionsPagerAdapter;
     private FloatingActionButton cameraButton;
+    private UserSQLiteHelper dbhelper=new UserSQLiteHelper(this);
 
-    @SuppressLint("ResourceAsColor")
+
     @Override
+    @SuppressLint("ResourceAsColor")
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
@@ -46,10 +49,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setTitle(null);
-
-        Intent intent=new Intent(this,CodeScanner.class);
-        intent.putExtra("names",getIntent().getExtras().getString("name"));
-        intent.putExtra("po",getIntent().getExtras().getString("po"));
 
         //el adaptador coloca las Pages -los fragmentos con las diferentes vistas- dentro de la vista padre Viewpager del xml
         sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
@@ -92,6 +91,12 @@ public class MainActivity extends AppCompatActivity {
         cameraButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String user=getIntent().getExtras().getString("name");
+                String psw=getIntent().getExtras().getString("psw");
+                int point=getIntent().getExtras().getInt("p");
+
+                dbhelper.UpdateUserPoints(user,psw,point+1);
+
                 startActivity(new Intent(MainActivity.this, CodeScanner.class));
             }
         });
