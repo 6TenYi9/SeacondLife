@@ -37,7 +37,7 @@
     <string name="AlertDg_message_EmptySignUp">\nHay campos vacios</string>
 
     <string name="till_next_fish">Till next fish:</string>
-    <string name="points">Points:</string>
+    <string name="points"><u>POINTS</u></string>
 
     <!-- code scanner -->
     <string name="allow_manual_input" translatable="false">Allow input code manually</string>

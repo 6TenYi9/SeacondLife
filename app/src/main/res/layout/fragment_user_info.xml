@@ -100,41 +100,19 @@
         app:layout_constraintStart_toStartOf="@id/guideLeft"
         android:orientation="vertical"
         app:layout_constraintTop_toTopOf="@id/guideTop"
-        app:layout_constraintBottom_toTopOf="@id/guideBot" >
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:layout_constraintCircleRadius="200dp"
-            app:layout_constraintEnd_toEndOf="@id/guideRight"
-            app:layout_constraintStart_toStartOf="@id/guideLeft"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toTopOf="@id/guideTop"
-            app:layout_constraintBottom_toTopOf="@id/guideBot">
-            <TextView
-                android:layout_margin="40dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/points"
-                android:textColor="@color/grey"
-                android:textSize="25dp" />
-            <TextView
-               android:layout_marginTop="40dp"
-                android:id="@+id/points"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="10"
-                android:textColor="@color/navy"
-                android:textSize="25dp" />
-        </LinearLayout>
+
+        app:layout_constraintBottom_toTopOf="@id/guideBot"
+        android:textAlignment="center">
 
         <TextView
-            android:layout_marginLeft="40dp"
+            android:layout_marginTop="40dp"
             android:id="@+id/progress"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/till_next_fish"
+            android:text="@string/points"
+            android:textAlignment="center"
             android:textColor="@color/grey"
-            android:textSize="20dp" />
+            android:textSize="40dp" />
 
         <ProgressBar
             android:id="@+id/progressBar"
@@ -151,12 +129,13 @@
 
         <TextView
             android:id="@+id/pointsLeft"
+
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:gravity="center"
-            android:textColor="@color/navy"
-            android:textSize="20dp"/>
+            android:textColor="@color/blue"
+            android:textSize="50dp"/>
 
     </LinearLayout>
 
