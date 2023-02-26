@@ -74,10 +74,11 @@ class UserSQLiteHelper (context: Context):SQLiteOpenHelper(context,DATABASE_NAME
         return point
     }
 
-    fun UpdateUserPoints(username:String,password:String,puntos:Int){
-        val comant="UPDATE "+TABLE_NAME+" SET "+KEY_POINT+"="+puntos+" WHERE "+KEY_USERNAME+"='"+username+"' AND "+KEY_PSWD+"='"+password+"'";
-        val dbreader=this.readableDatabase
-        dbreader!!.execSQL(comant,null)
+    fun UpdateUserPoints(username:String,password:String,points:Int){
+        val comant="UPDATE $TABLE_NAME SET $KEY_POINT = ? WHERE $KEY_USERNAME = ? AND $KEY_PSWD = ?"
+        val dbreader=this.writableDatabase
+        dbreader!!.execSQL(comant, arrayOf(points,username,password))
+        dbreader.close()
     }
 
     @SuppressLint("Range")
