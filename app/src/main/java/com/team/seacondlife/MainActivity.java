@@ -20,6 +20,7 @@ import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager.widget.ViewPager.OnPageChangeListener;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.team.UserDataBase.ScannerSQLiteHelper;
 import com.team.UserDataBase.UserSQLiteHelper;
 import com.team.seacondlife.codescanner.CodeScanner;
 import com.team.seacondlife.databinding.ActivityMainBinding;
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
     private SectionsPagerAdapter sectionsPagerAdapter;
     private FloatingActionButton cameraButton;
     private UserSQLiteHelper dbhelper=new UserSQLiteHelper(this);
+    private ScannerSQLiteHelper schelper=new ScannerSQLiteHelper(this);
 
 
     @Override
@@ -49,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         setTitle(null);
+
+        //verified that the database works
+        //schelper.addNewObject("codigo","botella de agua");
+        //Toast.makeText(this,schelper.SearchObject("codigo"),Toast.LENGTH_LONG).show();
+
 
         //el adaptador coloca las Pages -los fragmentos con las diferentes vistas- dentro de la vista padre Viewpager del xml
         sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
