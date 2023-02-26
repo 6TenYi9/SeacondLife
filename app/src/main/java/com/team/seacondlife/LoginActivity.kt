@@ -26,7 +26,7 @@ class LoginActivity : AppCompatActivity() {
         bind=ActivityLoginBinding.inflate(layoutInflater)
         setContentView(bind.root)
 
-        //dbhelp.addMasterUser()
+        dbhelp.addMasterUser()
 
 
         var contra = findViewById<TextView>(R.id.textForgotPassword)

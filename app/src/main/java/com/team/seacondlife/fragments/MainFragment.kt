@@ -60,6 +60,7 @@ class MainFragment : Fragment() {
         for (i in 0 until binding.sea.childCount) {
             val imageView = binding.sea.getChildAt(i) as ImageView
             imageView.id = i
+
             imageView.setImageResource(R.drawable.pez)
         }
         index = binding.sea.childCount + 1;
