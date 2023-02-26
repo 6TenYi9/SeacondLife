@@ -43,7 +43,6 @@ class CodeScanner : AppCompatActivity() {
 
     fun onScanButtonClicked(view: View) {
         val optionsBuilder = GmsBarcodeScannerOptions.Builder()
-
         if (allowManualInput) {
             optionsBuilder.allowManualInput()
         }
@@ -70,6 +69,7 @@ class CodeScanner : AppCompatActivity() {
     }
 
     private fun getSuccessfulMessage(barcode: Barcode): String {
+        /*
         val barcodeValue =
             String.format(
                 Locale.US,
@@ -79,7 +79,16 @@ class CodeScanner : AppCompatActivity() {
                 barcode.format,
                 barcode.valueType
             )
-        return getString(R.string.barcode_result, barcodeValue)
+
+         */
+
+        var barcodeValue = ""
+        when(barcode.displayValue){
+            "8413402990503" -> barcodeValue = "BOTELLA DE PLÁSTICO (SAN JOAQUÍN)\nCONTENEDOR AMARILLO"
+            else -> barcodeValue = "ESTE PRODUCTO TODAVÍA NO ESTÁ EN NUESTRA BASE DE DATOS"
+        }
+
+        return barcodeValue
     }
 
     private fun getErrorMessage(e: Exception): String? {
