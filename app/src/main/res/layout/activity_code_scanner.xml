@@ -9,19 +9,25 @@
     <ImageView
         android:layout_width="250dp"
         android:layout_height="250dp"
-        android:src="@drawable/logo" />
-    <Button
+        android:src="@drawable/ramita" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_marginTop="20dp"
         android:id="@+id/scan_barcode_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="350dp"
+        android:layout_height="60dp"
         android:onClick="onScanButtonClicked"
         android:text="@string/scan_barcode_button"
-        android:textSize="40dp"/>
+        android:textSize="40dp"
+        android:textColor="@color/white"
+        android:background="@drawable/boton_scanner"
+        />
     <TextView
         android:id="@+id/barcode_result_view"
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/reco"
+        android:textColor="@color/grey"
         android:textAlignment="center"/>
 </LinearLayout>

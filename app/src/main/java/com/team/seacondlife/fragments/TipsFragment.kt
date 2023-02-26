@@ -14,7 +14,7 @@ import com.team.seacondlife.R
 
 
 class TipsFragment : Fragment(), OnClickListener {
-    var textInfo = view?.findViewById<TextView>(com.team.seacondlife.R.id.info)
+
 
     //hay que arreglar el boton
     override fun onCreateView(
@@ -24,14 +24,12 @@ class TipsFragment : Fragment(), OnClickListener {
     ): View? {
         super.onCreate(savedInstanceState)
         val view: View = inflater.inflate(com.team.seacondlife.R.layout.fragment_tips,container,false)
-        var botMas = getView()?.findViewById<Button>(com.team.seacondlife.R.id.botonMas)
-        botMas?.setOnClickListener(this)
         return view
 
     }
     override fun onClick(v: View?) {
         Toast.makeText(this.context, "aaaaaa", Toast.LENGTH_SHORT).show()
-        textInfo?.setText("asdfd")
+
     }
 
 }

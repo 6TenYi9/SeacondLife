@@ -1,6 +1,8 @@
 package com.team.seacondlife.codescanner
 
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.CheckBox
@@ -30,6 +32,12 @@ class CodeScanner : AppCompatActivity() {
     }
      */
 
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        val inflater: MenuInflater = menuInflater
+        inflater.inflate(R.menu.menu_simple, menu)
+
+        return true
+    }
 
     fun onScanButtonClicked(view: View) {
         val optionsBuilder = GmsBarcodeScannerOptions.Builder()
