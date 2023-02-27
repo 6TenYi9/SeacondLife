@@ -67,7 +67,6 @@ dependencies {
 
     //DataBase (firebase) implementation:
     implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
-    implementation 'com.google.android.gms:play-services-code-scanner:16.0.0-beta3'
 
     //Firebase Test implementations:
     implementation platform('com.google.firebase:firebase-bom:31.2.2')
@@ -79,5 +78,8 @@ dependencies {
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.0'
 
     //Barcode scanner
-    implementation 'com.google.mlkit:barcode-scanning:17.0.3'
+    implementation 'com.google.android.gms:play-services-code-scanner:16.0.0-beta3'
+    //implementation 'com.google.mlkit:barcode-scanning:17.0.3'
+    implementation 'com.google.android.gms:play-services-code-scanner:16.0.0-beta3'
+
 }

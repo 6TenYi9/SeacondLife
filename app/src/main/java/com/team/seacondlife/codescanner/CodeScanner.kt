@@ -5,15 +5,14 @@ import android.view.Menu
 import android.view.MenuInflater
 import androidx.appcompat.app.AppCompatActivity
 import android.view.View
-import android.widget.CheckBox
 import android.widget.TextView
 import com.google.mlkit.common.MlKitException
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
 import com.google.mlkit.vision.codescanner.GmsBarcodeScanning
+import com.team.UserDataBase.ScannerSQLiteHelper
 import com.team.UserDataBase.UserSQLiteHelper
 import com.team.seacondlife.R
-import java.util.Locale
 
 /** Demonstrates the code scanner powered by Google Play Services. */
 class CodeScanner : AppCompatActivity() {
@@ -21,6 +20,7 @@ class CodeScanner : AppCompatActivity() {
     private var allowManualInput = true
     private var barcodeResultView: TextView? = null
     private val dbhelper=UserSQLiteHelper(this)
+    val scandbhelp=ScannerSQLiteHelper(this)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +28,8 @@ class CodeScanner : AppCompatActivity() {
         barcodeResultView = findViewById(R.id.barcode_result_view)
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+
+        scandbhelp.addSampleData()
     }
     //to back main
     override fun onSupportNavigateUp(): Boolean {
@@ -76,6 +78,7 @@ class CodeScanner : AppCompatActivity() {
     }
 
     private fun getSuccessfulMessage(barcode: Barcode): String {
+        /*
         val barcodeValue =
             String.format(
                 Locale.US,
@@ -85,7 +88,21 @@ class CodeScanner : AppCompatActivity() {
                 barcode.format,
                 barcode.valueType
             )
-        return getString(R.string.barcode_result, barcodeValue)
+
+         */
+
+        var text = ""
+        var code = ""
+        code = barcode.displayValue!!
+
+        if(scandbhelp.verifyItem(code) == true){
+            text = "NOMBRE DEL PRODUCTO: "+scandbhelp.getName(code) + "\nCONTENEDOR: "+scandbhelp.getType(code)
+        }
+        else{
+            text = "LO SENTIMOS, ESTE OBJETO AÚN NO ESTÁ EN LA BASE DE DATOS"
+        }
+
+        return text
     }
 
     private fun getErrorMessage(e: Exception): String? {
