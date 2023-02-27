@@ -11,6 +11,8 @@ import androidx.appcompat.widget.ActionBarOverlayLayout.LayoutParams
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
 import com.jawnnypoo.physicslayout.Physics
+import com.team.UserDataBase.UserSQLiteHelper
+import com.team.seacondlife.MainActivity
 import com.team.seacondlife.R
 import com.team.seacondlife.databinding.FragmentMainBinding
 import org.jbox2d.dynamics.Body
@@ -48,8 +50,11 @@ class MainFragment : Fragment() {
     ): View? {
 
         super.onCreate(savedInstanceState)
+        val dbhelper= activity?.let { UserSQLiteHelper(it) }
         binding = FragmentMainBinding.inflate(layoutInflater)
         val view: View = binding.root
+        var username=""
+        var password=""
 
         setHasOptionsMenu(true)
 
@@ -86,12 +91,73 @@ class MainFragment : Fragment() {
         //capturo la puntuación del usuario
         try {
             point = activity?.intent!!.extras!!.getInt("p")
+            username= activity?.intent!!.extras!!.getString("name").toString()
+            password= activity?.intent!!.extras!!.getString("psw").toString()
         }catch(e:java.lang.NullPointerException){}
         //añadir peces según la puntuación del usuario
+            FishCategory()
 
+        //onReflesh
+        binding.swiper.setOnRefreshListener {
+            //Toast.makeText(activity,username+" - "+password,Toast.LENGTH_LONG).show()
+            try {
+                point = dbhelper!!.getUserPoints(username, password)
+                FishCategory()
+            }catch(e:NullPointerException){
+                Toast.makeText(activity,"Error",Toast.LENGTH_LONG).show()
+            }
+            binding.swiper.isRefreshing=false
+        }
+
+
+        binding.sea.physics.addOnPhysicsProcessedListener(object :
+            Physics.OnPhysicsProcessedListener {
+            override fun onPhysicsProcessed(physics: Physics, world: World) {
+                Log.d(ContentValues.TAG, "onPhysicsProcessed")
+            }
+        })
+
+        binding.sea.physics.setOnBodyCreatedListener(object : Physics.OnBodyCreatedListener {
+            override fun onBodyCreated(view: View, body: Body) {
+                Log.d(ContentValues.TAG, "Body created for view ${view.id}")
+            }
+        })
+
+        Timer().scheduleAtFixedRate(object : TimerTask() {
+            override fun run() {
+                var conf: Boolean = true
+
+                while (true) {
+                    if (!conf) {
+                        binding.sea.physics.setGravity(
+                            ((Math.random() * 9) * (1)).toFloat(),
+                            ((Math.random() * 9) * (1)).toFloat()
+                        )
+                        conf = true
+                    } else {
+                        binding.sea.physics.setGravity(
+                            ((Math.random() * 9) * (-1)).toFloat(),
+                            ((Math.random() * 9) * (-1)).toFloat()
+                        )
+                        conf = false
+                    }
+                }
+
+            }
+        }, 0, 10000)
+
+        return view
+    }
+
+    fun FishCategory(){
+        binding.sea.removeAllViewsInLayout()
         var fishtoadd=point-(point/10)*10
+        if(fishtoadd>=5){
+            fishtoadd-=5
+        }
         when(point){
             in 0..4 -> {
+
                 for(i in 0..fishtoadd) {
                     val pez=ImageView(context)
                     pez.setImageResource(R.drawable.pez)
@@ -139,60 +205,7 @@ class MainFragment : Fragment() {
                 }
             }
         }
-        /*
-        if (UpdateInDB()) {
-            val pez = ImageView(this)
-            pez.setImageResource(R.drawable.pulpo)
-            val layoutParams = ConstraintLayout.LayoutParams(
-                resources.getDimensionPixelSize(R.dimen.square_size),
-                resources.getDimensionPixelSize(R.dimen.square_size)
-            )
-            pez.layoutParams = layoutParams
-            pez.id = index
-            binding.sea.addView(pez)
-            index++
-        }
-        */
-
-        binding.sea.physics.addOnPhysicsProcessedListener(object :
-            Physics.OnPhysicsProcessedListener {
-            override fun onPhysicsProcessed(physics: Physics, world: World) {
-                Log.d(ContentValues.TAG, "onPhysicsProcessed")
-            }
-        })
-
-        binding.sea.physics.setOnBodyCreatedListener(object : Physics.OnBodyCreatedListener {
-            override fun onBodyCreated(view: View, body: Body) {
-                Log.d(ContentValues.TAG, "Body created for view ${view.id}")
-            }
-        })
-
-        Timer().scheduleAtFixedRate(object : TimerTask() {
-            override fun run() {
-                var conf: Boolean = true
-
-                while (true) {
-                    if (!conf) {
-                        binding.sea.physics.setGravity(
-                            ((Math.random() * 9) * (1)).toFloat(),
-                            ((Math.random() * 9) * (1)).toFloat()
-                        )
-                        conf = true
-                    } else {
-                        binding.sea.physics.setGravity(
-                            ((Math.random() * 9) * (-1)).toFloat(),
-                            ((Math.random() * 9) * (-1)).toFloat()
-                        )
-                        conf = false
-                    }
-                }
-
-            }
-        }, 0, 10000)
-
-        return view
     }
-
     fun Addfish(pez:ImageView){
         val layoutParams=ConstraintLayout.LayoutParams(
             resources.getDimensionPixelSize(R.dimen.square_size),
@@ -200,10 +213,6 @@ class MainFragment : Fragment() {
         )
         pez.layoutParams=layoutParams
         binding.sea.addView(pez)
-    }
-
-    fun UpdateInDB(): Boolean {
-        return false
     }
 
 }
