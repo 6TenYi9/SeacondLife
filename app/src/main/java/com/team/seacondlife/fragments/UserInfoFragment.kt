@@ -19,7 +19,6 @@ class UserInfoFragment : Fragment() {
     private val scope= MainScope()
     private lateinit var progress:ProgressBar
     private var point=0
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
