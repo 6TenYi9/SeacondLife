@@ -34,6 +34,7 @@ class UserInfoFragment : Fragment() {
         var point=activity?.intent!!.extras!!.getInt("p")
 
         bind.UserName.text=name
+        bind.points.text=point.toString()
 
         bind.pointsLeft.text="0/10"
 

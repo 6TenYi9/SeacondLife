@@ -18,8 +18,9 @@
         <activity
             android:name=".codescanner.CodeScanner"
             android:exported="false"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/Theme.appbar2">
+            <!--android:parentActivityName=".MainActivity"-->
+
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />

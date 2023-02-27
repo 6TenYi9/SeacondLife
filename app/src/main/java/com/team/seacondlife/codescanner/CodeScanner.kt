@@ -26,8 +26,14 @@ class CodeScanner : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_code_scanner)
         barcodeResultView = findViewById(R.id.barcode_result_view)
-    }
 
+        supportActionBar!!.setDisplayHomeAsUpEnabled(true)
+    }
+    //to back main
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return false
+    }
     /*
     fun onAllowManualInputCheckboxClicked(view: View) {
         allowManualInput = (view as CheckBox).isChecked
