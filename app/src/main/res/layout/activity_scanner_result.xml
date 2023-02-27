@@ -10,13 +10,10 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_margin="40dp"
-        android:orientation="vertical">
-
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:src="@drawable/bottles" />
+        android:orientation="vertical"
+        android:background="@drawable/semi_blue_bk">
         <TextView
+            android:layout_marginTop="20dp"
             android:textAlignment="center"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -25,14 +22,36 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textSize="50dp"
-            android:text="resultado:"/>
+            android:text="@string/result"
+            android:textColor="@color/grey"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="20dp"
+            android:padding="20dp"
+            android:background="@drawable/semi_transparent_background"
+            android:orientation="vertical">
+        <ImageView
+
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:src="@drawable/bottles2" />
+
 
         <TextView
             android:id="@+id/result"
+            android:layout_marginTop="10dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="aaa"
-            android:textAlignment="center" />
+            android:textAlignment="center"
+            android:textColor="@color/grey"/>
+            <ImageView
+
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/contenedor" />
+        </LinearLayout>
     </LinearLayout>
 
 

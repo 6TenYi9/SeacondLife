@@ -48,9 +48,7 @@
     <string name="error_app_name_unavailable" translatable="false">App name is not set.</string>
     <string name="error_default_message" translatable="false">Failed to scan code: %1$s</string>
     <string name="reco">Please be sure your google play services are up to date! :)</string>
-    <string name="texto1">aa</string>
-    <string name="a">a</string>
-    <string name="tips"> <b>Prepare Bottles</b> \n\n Rinse bottles and remove the labels before placing them in your recycling receptacle. Remove the lids and use them for creative purposes or throw them away, as lids are made from a different type of plastic and can contaminate the recycling process. Stomp on water bottles to flatten them before adding them to the bin.
+    <string name="tips" translatable="false"> <b>Prepare Bottles</b> \n\n Rinse bottles and remove the labels before placing them in your recycling receptacle. Remove the lids and use them for creative purposes or throw them away, as lids are made from a different type of plastic and can contaminate the recycling process. Stomp on water bottles to flatten them before adding them to the bin.
 \n \n<b>Check the Number</b>
 \n \n
 The bottom of each plastic water bottle should have a number inside chasing arrows. This number indicates the type of plastic used in the production process. Most water bottles are made from No. 1 PET (polyethylene terephthalate). Recycling centers vary in the types of plastic they can process. Contact your local municipality to determine the plastics accepted for recycling in your area, and place only bottles with those designated numbers in your recycling bins. Adding bottles with other numbers only increases the workload of the recycling municipalities.
@@ -63,5 +61,6 @@ When purchasing a product, check the number on the bottom of the container to ma
 \n \n
 The EPA encourages consumers to reduce consumption of goods that require waste disposal. This saves natural resources, reduces toxic waste from production and disposal, and saves money for communities, businesses and consumers.Stainless steel water bottles are recommended as alternatives to disposable plastic containers. They are durable, do not leach into the water and eliminate the problem of waste.
      \n \n</string>
+    <string name="result">RESULTADO:</string>
 
 </resources>
