@@ -33,4 +33,5 @@
     <string name="points">Points:</string>
     <string name="reco">Please be sure your google play services are up to date! :)</string>
     <string name="error">Oops, an unexpected error has occurred :(</string>
+    <string name="result">RESULT:</string>
 </resources>
