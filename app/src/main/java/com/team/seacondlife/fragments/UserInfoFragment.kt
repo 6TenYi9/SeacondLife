@@ -60,7 +60,7 @@ class UserInfoFragment : Fragment() {
         progress.max=5
         if(progress.progress<progress.max){
             point -= (point / 10) * 10
-            if(point>5)
+            if(point>=5)
                 point-=5
             progress.progress=point
             bind.pointsLeft.text="${(point).toString()}/5"
