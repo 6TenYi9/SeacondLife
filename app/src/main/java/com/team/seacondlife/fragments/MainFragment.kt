@@ -51,7 +51,7 @@ class MainFragment : Fragment() {
         binding = FragmentMainBinding.inflate(layoutInflater)
         val view: View = binding.root
 
-        setHasOptionsMenu(true);
+        setHasOptionsMenu(true)
 
         binding.sea.physics.isFlingEnabled = true
         binding.sea.physics.isPhysicsEnabled
@@ -91,35 +91,35 @@ class MainFragment : Fragment() {
 
         var fishtoadd=point-(point/10)*10
         when(point){
-            in 0..9 -> {
+            in 0..4 -> {
                 for(i in 0..fishtoadd) {
                     val pez=ImageView(context)
                     pez.setImageResource(R.drawable.pez)
                     Addfish(pez)
                 }
             }
-            in 10..19 ->{
+            in 5..10 ->{
                 for(i in 0..fishtoadd) {
                     val pez=ImageView(context)
                     pez.setImageResource(R.drawable.pezpayaso)
                     Addfish(pez)
                 }
             }
-            in 20..29->{
+            in 11..15->{
                 for(i in 0..fishtoadd) {
                     val pez=ImageView(context)
                     pez.setImageResource(R.drawable.medusa)
                     Addfish(pez)
                 }
             }
-            in 30..39->{
+            in 16..20->{
                 for(i in 0..fishtoadd) {
                     val pez=ImageView(context)
                     pez.setImageResource(R.drawable.pulpo)
                     Addfish(pez)
                 }
             }
-            in 40..49->{
+            in 21..25->{
                 for(i in 0..fishtoadd) {
                     val pez=ImageView(context)
                     pez.setImageResource(R.drawable.mantarraya)
