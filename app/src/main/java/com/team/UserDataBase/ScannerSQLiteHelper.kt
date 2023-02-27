@@ -21,7 +21,6 @@ class ScannerSQLiteHelper (context: Context): SQLiteOpenHelper(context, DB_NAME,
         db!!.execSQL(
             SQLCommant
         )
-        addSampleData(db)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, p1: Int, p2: Int) {
@@ -78,14 +77,19 @@ class ScannerSQLiteHelper (context: Context): SQLiteOpenHelper(context, DB_NAME,
         }
     }
 
-    fun addSampleData(db: SQLiteDatabase) {
+    fun addSampleData() {
         val values=ContentValues()
-
-        values.put(KEY_CODE,"123")
-        values.put(KEY_NAME,"Botella Fuentealta")
+        val db=this.writableDatabase
+        values.put(KEY_CODE,"8413402990503")
+        values.put(KEY_NAME,"Agua San Joaquín")
         values.put(KEY_TYPE,"0")
-
         db.insert(TB_NAME,null,values)
+
+        values.put(KEY_CODE,"8410128160319")
+        values.put(KEY_NAME,"Agua Bezoya")
+        values.put(KEY_TYPE,"0")
+        db.insert(TB_NAME,null,values)
+        db.close()
     }
 
     fun verifyItem(code: String):Boolean?{

@@ -25,6 +25,8 @@ class CodeScanner : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_code_scanner)
         barcodeResultView = findViewById(R.id.barcode_result_view)
+
+        scandbhelp.addSampleData()
     }
 
     /*
