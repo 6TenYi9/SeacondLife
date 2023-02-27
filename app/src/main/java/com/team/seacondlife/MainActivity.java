@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String user=getIntent().getExtras().getString("name");
                 String psw=getIntent().getExtras().getString("psw");
-                int point=getIntent().getExtras().getInt("p");
+                int point=dbhelper.getUserPoints(user,psw);
 
                 dbhelper.UpdateUserPoints(user,psw,point+1);
 
