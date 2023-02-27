@@ -40,7 +40,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/bottom_navigation_menu"
             android:theme="@style/botbar"
-            android:background="@color/darkblue"
+            android:background="@color/navy"
             />
 
 
