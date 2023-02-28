@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".codescanner.AddItem">
+    tools:context=".codescanner.Sorry">
 
 
     <LinearLayout
@@ -25,12 +25,25 @@
             android:orientation="vertical"
             android:gravity="center"
             >
-
+            <ImageView
+                android:layout_margin="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:src="@drawable/sad" />
+            <TextView
+                android:id="@+id/result"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="LO SENTIMOS, ESTE OBJETO AUN NO EXISTE EN NUETSRA BASE DE DATOS"
+                android:textAlignment="center"
+                android:textColor="@color/navy"
+                android:textSize="30dp"/>
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ACEPTAR"
+                android:text="AÑADIR"
                 android:textSize="20dp" />
         </LinearLayout>
     </LinearLayout>
