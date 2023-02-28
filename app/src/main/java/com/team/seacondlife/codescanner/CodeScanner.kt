@@ -1,11 +1,12 @@
 package com.team.seacondlife.codescanner
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuInflater
-import androidx.appcompat.app.AppCompatActivity
 import android.view.View
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.google.mlkit.common.MlKitException
 import com.google.mlkit.vision.barcode.common.Barcode
 import com.google.mlkit.vision.codescanner.GmsBarcodeScannerOptions
@@ -59,7 +60,10 @@ class CodeScanner : AppCompatActivity() {
         gmsBarcodeScanner
             .startScan()
             .addOnSuccessListener { barcode: Barcode ->
-                barcodeResultView!!.text = getSuccessfulMessage(barcode)
+                val intent = Intent(this, ScannerResult::class.java)
+                val text: String = getSuccessfulMessage(barcode)
+                intent.putExtra("TEXT", text)
+                startActivity(intent)
             }
             .addOnFailureListener { e: Exception -> barcodeResultView!!.text = getErrorMessage(e) }
             .addOnCanceledListener {
@@ -96,7 +100,7 @@ class CodeScanner : AppCompatActivity() {
         code = barcode.displayValue!!
 
         if(scandbhelp.verifyItem(code) == true){
-            text = "NOMBRE DEL PRODUCTO: "+scandbhelp.getName(code) + "\nCONTENEDOR: "+scandbhelp.getType(code)
+            text = scandbhelp.getName(code) + "\nCONTENEDOR: "+scandbhelp.getType(code)
         }
         else{
             text = "LO SENTIMOS, ESTE OBJETO AÚN NO ESTÁ EN LA BASE DE DATOS"
