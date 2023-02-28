@@ -21,8 +21,8 @@
         <activity
             android:name=".codescanner.ScannerResult"
             android:exported="false"
-            android:theme="@style/Theme.appbar2"
-            android:parentActivityName=".MainActivity"/>
+
+            />
         <activity
             android:name=".codescanner.CodeScanner"
             android:exported="false"

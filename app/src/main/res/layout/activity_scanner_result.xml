@@ -7,9 +7,9 @@
     tools:context=".codescanner.ScannerResult">
 
     <LinearLayout
+        android:id="@+id/ll"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="40dp"
         android:orientation="vertical"
         android:background="@drawable/semi_blue_bk"
         android:gravity="center">
@@ -23,7 +23,6 @@
             android:orientation="vertical"
             android:gravity="center">
         <ImageView
-
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:src="@drawable/bottles2" />
@@ -36,7 +35,8 @@
             android:layout_height="wrap_content"
             android:text="aaa"
             android:textAlignment="center"
-            android:textColor="@color/grey"/>
+            android:textColor="@color/navy"
+            android:textSize="30dp"/>
             <ImageView
 
                 android:layout_width="match_parent"

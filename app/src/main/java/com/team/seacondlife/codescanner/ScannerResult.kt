@@ -15,5 +15,6 @@ class ScannerResult : AppCompatActivity() {
 
         val intent = intent
         result.setText(intent.getStringExtra("TEXT"))
+        title = "RESULTADO"
     }
 }
