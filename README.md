@@ -20,12 +20,12 @@ Figma [here :)](https://www.figma.com/file/gFI1fnjsRLRhrUmtEMtoKJ/SeacondLife?no
 ### Splash Activity
 
 > SplashActivity con el logo con animación situado en fondo blanco. \
-> Logo: \
+> Logo: <br>
 
 ![alt text](IMG/logo.png)
 
 > código --> [here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/SplashActivity.kt) \
-> layout --> [here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_splash.xml) \
+> layout --> [here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_splash.xml) <br>
 
 ![alt text](IMG/splash.png)
 
@@ -34,7 +34,7 @@ Figma [here :)](https://www.figma.com/file/gFI1fnjsRLRhrUmtEMtoKJ/SeacondLife?no
 
 > InitActivity con el logo y las opciones de registro y iniciar sesión. \
 > código --> [here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/StartActivity.kt) \
-> layout --> [here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_start.xml) \
+> layout --> [here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_start.xml) <br>
 
 ![alt text](IMG/init.png)
 
@@ -43,7 +43,7 @@ Figma [here :)](https://www.figma.com/file/gFI1fnjsRLRhrUmtEMtoKJ/SeacondLife?no
 
 > LoginActivity con campos de usuario y contraseña para iniciar sesión comprobación utilizando la base de datos local. \
 > código -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/LoginActivity.kt) \
-> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_login.xml) \
+> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_login.xml) <br>
 
 ![alt text](IMG/login.png)
 
@@ -52,7 +52,7 @@ Figma [here :)](https://www.figma.com/file/gFI1fnjsRLRhrUmtEMtoKJ/SeacondLife?no
 
 > SignUpActivity con los campos de usuario,email,contraseña y su confirmación. Los datos se guardan en un base de datos local. \
 > código -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/SignUpActivity.kt) \
-> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_sign_up.xml) \
+> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_sign_up.xml) <br>
 
 ![alt text](IMG/signup.png)
 
@@ -60,9 +60,9 @@ Figma [here :)](https://www.figma.com/file/gFI1fnjsRLRhrUmtEMtoKJ/SeacondLife?no
 ### Main Activity
 
 > MainActivity con la animación física de choque simulando peces flotando en el mar, es un fragment. \
-> Tiene dos menús: \ ![alt text](IMG/upmenu.png) y \ ![alt text](IMG/bottmenu.png) \
+> Tiene dos menús: <br> ![alt text](IMG/upmenu.png) y <br> ![alt text](IMG/bottmenu.png) \
 > código -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/MainActivity.java) \
-> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/fragment_main.xml) \
+> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/fragment_main.xml) <br>
 
 ![alt text](IMG/main.png)
 
@@ -72,7 +72,7 @@ Figma [here :)](https://www.figma.com/file/gFI1fnjsRLRhrUmtEMtoKJ/SeacondLife?no
 > AboutActivity con la información de los creadores. \
 > código -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/AboutActivity.kt) \
 > main fragment code -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/fragments/MainFragment.kt) \
-> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_about.xml) \
+> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_about.xml) <br>
 
 ![alt text](IMG/about.png)
 
@@ -81,7 +81,7 @@ Figma [here :)](https://www.figma.com/file/gFI1fnjsRLRhrUmtEMtoKJ/SeacondLife?no
 
 > SettingActivity con las configuraciones de modo nocturno y la opción de idiomas. \
 > código -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/SettingsActivity.kt) \
-> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_settings.xml) \
+> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_settings.xml) <br>
 
 ![alt text](IMG/conf.png)
 
@@ -90,19 +90,21 @@ Figma [here :)](https://www.figma.com/file/gFI1fnjsRLRhrUmtEMtoKJ/SeacondLife?no
 
 > ScannerActivity con la opción de escanear el codigo y mostrar el resultado. \
 > código -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/codescanner/CodeScanner.kt) \
-> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_code_scanner.xml) \
+> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_code_scanner.xml) <br>
 
-#### ResultScanner
+![alt text](IMG/Scanner.png)
+
+* #### ResultScanner
 
 > Muestra el resultado del scanner. \
 > código -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/codescanner/ScannerResult.kt) \
-> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_scanner_result.xml) \
+> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/activity_scanner_result.xml) <br>
 
 <a name="item9"></a>
 ### Tips Fragment
 
 > Muestra los consejos para hacer un buen reciclaje. \
 > código -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/java/com/team/seacondlife/fragments/TipsFragment.kt) \
-> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/fragment_tips.xml) \
+> layout -->[here :3](https://github.com/6TenYi9/SeacondLife/blob/master/app/src/main/res/layout/fragment_tips.xml) <br>
 
 ![alt text](IMG/tips.png)
