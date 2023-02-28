@@ -118,19 +118,16 @@ public class MainActivity extends AppCompatActivity {
                 switch (item.getItemId()) {
                     case R.id.tips:
                         item.setChecked(true);
-                        removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(0);
                         break;
 
                     case R.id.main:
                         item.setChecked(true);
-                        removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(1);
                         break;
 
                     case R.id.user_info:
                         item.setChecked(true);
-                        removeBadge(mybottomNavView, item.getItemId());
                         viewPager1.setCurrentItem(2);
                         break;
                 }
@@ -155,7 +152,6 @@ public class MainActivity extends AppCompatActivity {
                     mybottomNavView.getMenu().getItem(1).setChecked(false);
                 mybottomNavView.getMenu().getItem(position).setChecked(true);
 
-                removeBadge(mybottomNavView, mybottomNavView.getMenu().getItem(position).getItemId());
                 prevMenuItem = mybottomNavView.getMenu().getItem(position);
             }
 
@@ -165,20 +161,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-    }
-
-    /**
-     * Remove badge.
-     *
-     * @param bottomNavigationView the bottom navigation view
-     * @param itemId               the item id
-     */
-//removing badges
-    public static void removeBadge(BottomNavigationView bottomNavigationView, @IdRes int itemId) {
-        BottomNavigationItemView itemView = bottomNavigationView.findViewById(itemId);
-        if (itemView.getChildCount() == 3) {
-            itemView.removeViewAt(2);
-        }
     }
 
     @Override
