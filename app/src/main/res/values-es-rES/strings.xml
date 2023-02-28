@@ -34,4 +34,7 @@
     <string name="reco">Por favor, asegurate de que tus servicios de google play estan actualizados! :)</string>
     <string name="error">Ups, ha ocurrido un error inesperado :(</string>
     <string name="result">RESULTADO:</string>
+    <string name="AlertDg_message_Reset">Restablece tu contraseña:</string>
+    <string name="AlertDg_message_ResetSucc">Contraseña restablecida!!!</string>
+    <string name="AlertDg_menssage_ResetErr">Error!! El usuario con el email introducido no existe.</string>
 </resources>

@@ -35,6 +35,9 @@
     <string name="AlertDg_message_ErrSignUp">\nLas contraseñas no coinciden o el usuario ya existe :(</string>
     <string name="AlertDg_message_SuccSignUp">\nCuenta registrada con éxito!!</string>
     <string name="AlertDg_message_EmptySignUp">\nHay campos vacios</string>
+    <string name="AlertDg_message_Reset">Restablece tu contraseña:</string>
+    <string name="AlertDg_message_ResetSucc">Contraseña restablecida!!!</string>
+    <string name="AlertDg_menssage_ResetErr">Error!! El usuario con el email introducido no existe.</string>
 
     <string name="till_next_fish">Till next fish:</string>
     <string name="points"><u>POINTS</u></string>

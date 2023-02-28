@@ -82,6 +82,29 @@ class UserSQLiteHelper (context: Context):SQLiteOpenHelper(context,DATABASE_NAME
     }
 
     @SuppressLint("Range")
+    fun VerifyEmail(username:String, email:String):Boolean{
+        var exist=false
+        val dbreader=this.readableDatabase
+        val rs=dbreader.rawQuery(
+            "SELECT * FROM "+TABLE_NAME+" WHERE "+KEY_USERNAME+"='"+username+"' AND "+KEY_EMAIL+"='"+email+"'"
+            , null)
+        if(rs.moveToFirst()){
+            var name=rs.getString(rs.getColumnIndex(KEY_USERNAME))
+            rs.close()
+            exist=true
+        }
+        dbreader.close()
+        return exist
+    }
+
+    fun UpdateUserPassword(username:String,email:String,password:String){
+        val comant="UPDATE $TABLE_NAME SET $KEY_POINT = ? WHERE $KEY_USERNAME = ? AND $KEY_PSWD = ?"
+        val dbwriter=this.writableDatabase
+        val rs=dbwriter.rawQuery(comant, arrayOf(password,username,email))
+        dbwriter.close()
+    }
+
+    @SuppressLint("Range")
     fun VerifyUser(username:String, password:String):Boolean?{
         val dbreader=this.readableDatabase
         var exist:Boolean
