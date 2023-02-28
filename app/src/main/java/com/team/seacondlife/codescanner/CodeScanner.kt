@@ -100,7 +100,7 @@ class CodeScanner : AppCompatActivity() {
         code = barcode.displayValue!!
 
         if(scandbhelp.verifyItem(code) == true){
-            text = "NOMBRE DEL PRODUCTO: "+scandbhelp.getName(code) + "\nCONTENEDOR: "+scandbhelp.getType(code)
+            text = scandbhelp.getName(code) + "\nCONTENEDOR: "+scandbhelp.getType(code)
         }
         else{
             text = "LO SENTIMOS, ESTE OBJETO AÚN NO ESTÁ EN LA BASE DE DATOS"
