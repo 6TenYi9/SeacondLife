@@ -32,7 +32,9 @@ class CodeScanner : AppCompatActivity() {
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
 
-        scandbhelp.addSampleData()
+        if(scandbhelp.verifyItem("8413402990503") == true) {
+            scandbhelp.addSampleData()
+        }
     }
     //to back main
     override fun onSupportNavigateUp(): Boolean {
@@ -64,7 +66,7 @@ class CodeScanner : AppCompatActivity() {
             .addOnSuccessListener { barcode: Barcode ->
                 val text: String = getSuccessfulMessage(barcode)
                 val intent: Intent
-                if (text.equals("SORRY")){
+                if (text == "SORRY"){
                     intent = Intent(this, Sorry::class.java)
                     intent.putExtra("CODE", code)
                 }

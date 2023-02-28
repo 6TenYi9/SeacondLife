@@ -9,17 +9,26 @@ import com.team.seacondlife.R
 
 class Sorry : AppCompatActivity() {
 
-    val button = findViewById<Button>(R.id.button)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sorry)
+
+        val button = findViewById<Button>(R.id.button)
 
         var code = intent.extras!!.getString("CODE")
 
         button.setOnClickListener(View.OnClickListener {
             val intent = Intent(this, AddItem::class.java)
             intent.putExtra("CODE", code)
-            startActivity(intent) })
+            startActivityForResult(intent, 1) })
     }
 
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1) {
+            if (resultCode == RESULT_OK) {
+                finish()
+            }
+        }
+    }
 }
