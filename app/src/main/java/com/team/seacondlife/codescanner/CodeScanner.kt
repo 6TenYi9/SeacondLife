@@ -23,6 +23,8 @@ class CodeScanner : AppCompatActivity() {
     private val dbhelper=UserSQLiteHelper(this)
     val scandbhelp=ScannerSQLiteHelper(this)
 
+    var code = ""
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_code_scanner)
@@ -60,9 +62,16 @@ class CodeScanner : AppCompatActivity() {
         gmsBarcodeScanner
             .startScan()
             .addOnSuccessListener { barcode: Barcode ->
-                val intent = Intent(this, ScannerResult::class.java)
                 val text: String = getSuccessfulMessage(barcode)
-                intent.putExtra("TEXT", text)
+                val intent: Intent
+                if (text.equals("SORRY")){
+                    intent = Intent(this, Sorry::class.java)
+                    intent.putExtra("CODE", code)
+                }
+                else{
+                    intent = Intent(this, ScannerResult::class.java)
+                    intent.putExtra("TEXT", text)
+                }
                 startActivity(intent)
             }
             .addOnFailureListener { e: Exception -> barcodeResultView!!.text = getErrorMessage(e) }
@@ -96,14 +105,13 @@ class CodeScanner : AppCompatActivity() {
          */
 
         var text = ""
-        var code = ""
         code = barcode.displayValue!!
 
         if(scandbhelp.verifyItem(code) == true){
             text = scandbhelp.getName(code) + "\nCONTENEDOR: "+scandbhelp.getType(code)
         }
         else{
-            text = "LO SENTIMOS, ESTE OBJETO AÚN NO ESTÁ EN LA BASE DE DATOS"
+            text = "SORRY"
         }
 
         return text
