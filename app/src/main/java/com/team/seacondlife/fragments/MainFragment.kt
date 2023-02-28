@@ -59,8 +59,7 @@ class MainFragment : Fragment() {
         setHasOptionsMenu(true)
 
         binding.sea.physics.isFlingEnabled = true
-        binding.sea.physics.isPhysicsEnabled
-        binding.sea.physics.isFlingEnabled
+        binding.sea.physics.isPhysicsEnabled = true
 
         for (i in 0 until binding.sea.childCount) {
             val imageView = binding.sea.getChildAt(i) as ImageView
@@ -104,7 +103,7 @@ class MainFragment : Fragment() {
                 point = dbhelper!!.getUserPoints(username, password)
                 FishCategory()
             }catch(e:NullPointerException){
-                Toast.makeText(activity,"Error",Toast.LENGTH_LONG).show()
+                Toast.makeText(activity,R.string.error,Toast.LENGTH_LONG).show()
             }
             binding.swiper.isRefreshing=false
         }
