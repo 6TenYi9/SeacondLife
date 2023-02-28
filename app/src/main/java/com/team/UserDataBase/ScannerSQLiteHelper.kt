@@ -89,6 +89,11 @@ class ScannerSQLiteHelper (context: Context): SQLiteOpenHelper(context, DB_NAME,
         values.put(KEY_NAME,"Agua Bezoya")
         values.put(KEY_TYPE,"0")
         db.insert(TB_NAME,null,values)
+
+        values.put(KEY_CODE,"8423207210621")
+        values.put(KEY_NAME,"Bicentury")
+        values.put(KEY_TYPE,"0")
+        db.insert(TB_NAME,null,values)
         db.close()
     }
 
