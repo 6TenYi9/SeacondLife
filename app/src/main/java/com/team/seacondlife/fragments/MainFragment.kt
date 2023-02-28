@@ -90,9 +90,9 @@ class MainFragment : Fragment() {
         })*/
         //capturo la puntuación del usuario
         try {
-            point = activity?.intent!!.extras!!.getInt("p")
             username= activity?.intent!!.extras!!.getString("name").toString()
             password= activity?.intent!!.extras!!.getString("psw").toString()
+            point = dbhelper!!.getUserPoints(username,password)
         }catch(e:java.lang.NullPointerException){}
         //añadir peces según la puntuación del usuario
             FishCategory()

@@ -34,4 +34,7 @@
     <string name="reco">Please be sure your google play services are up to date! :)</string>
     <string name="error">Oops, an unexpected error has occurred :(</string>
     <string name="result">RESULT:</string>
+    <string name="AlertDg_menssage_ResetErr">Ups!! The user with the email entered doesn\'t exist.</string>
+    <string name="AlertDg_message_ResetSucc">Password reset!!!</string>
+    <string name="AlertDg_message_Reset">Reset your password:</string>
 </resources>
