@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity
 import com.team.seacondlife.R
 
 class ScannerResult : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_scanner_result)

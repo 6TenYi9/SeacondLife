@@ -37,4 +37,5 @@
     <string name="AlertDg_message_Reset">Restablece tu contraseña:</string>
     <string name="AlertDg_message_ResetSucc">Contraseña restablecida!!!</string>
     <string name="AlertDg_menssage_ResetErr">Error!! El usuario con el email introducido no existe.</string>
+    <string name="addpoint">Punto añadido correctamente</string>
 </resources>

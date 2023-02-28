@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuInflater
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.google.mlkit.common.MlKitException
 import com.google.mlkit.vision.barcode.common.Barcode
@@ -22,7 +23,6 @@ class CodeScanner : AppCompatActivity() {
     private var barcodeResultView: TextView? = null
     private val dbhelper=UserSQLiteHelper(this)
     val scandbhelp=ScannerSQLiteHelper(this)
-
     var code = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -65,12 +65,16 @@ class CodeScanner : AppCompatActivity() {
             .startScan()
             .addOnSuccessListener { barcode: Barcode ->
                 val text: String = getSuccessfulMessage(barcode)
+                val names=intent?.extras!!.getString("user").toString()
+                val passw=intent?.extras!!.getString("passw").toString()
                 val intent: Intent
                 if (text == "SORRY"){
                     intent = Intent(this, Sorry::class.java)
                     intent.putExtra("CODE", code)
                 }
                 else{
+                    dbhelper.UpdateUserPoints(names,passw,dbhelper.getUserPoints(names,passw)+1)
+                    Toast.makeText(this,R.string.addpoint,Toast.LENGTH_LONG).show()
                     intent = Intent(this, ScannerResult::class.java)
                     intent.putExtra("TEXT", text)
                 }

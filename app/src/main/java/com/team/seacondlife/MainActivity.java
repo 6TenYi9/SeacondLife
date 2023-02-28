@@ -23,6 +23,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.team.UserDataBase.ScannerSQLiteHelper;
 import com.team.UserDataBase.UserSQLiteHelper;
 import com.team.seacondlife.codescanner.CodeScanner;
+import com.team.seacondlife.codescanner.ScannerResult;
 import com.team.seacondlife.databinding.ActivityMainBinding;
 import com.team.seacondlife.ui.main.SectionsPagerAdapter;
 
@@ -100,11 +101,9 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String user=getIntent().getExtras().getString("name");
                 String psw=getIntent().getExtras().getString("psw");
-                int point=dbhelper.getUserPoints(user,psw);
 
-                dbhelper.UpdateUserPoints(user,psw,point+1);
-
-                startActivity(new Intent(MainActivity.this, CodeScanner.class));
+                startActivity(new Intent(MainActivity.this, CodeScanner.class).
+                        putExtra("user",user).putExtra("passw",psw));
             }
         });
 

@@ -43,6 +43,7 @@
     <string name="points"><u>POINTS</u></string>
 
     <!-- code scanner -->
+    <string name="addpoint">Punto añadido correctamente</string>
     <string name="allow_manual_input" translatable="false">Allow input code manually</string>
     <string name="scan_barcode_button" translatable="false">Scan Barcode</string>
     <string name="barcode_result" translatable="false">Barcode detected.\n%1$s</string>
